@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 class Signature extends Component {
     render() {
         return (
-            <div>
-                <h1>My React App!</h1>
-            </div>
+            <h1>Hello 1 + f, {this.props.name}</h1>
         );
     }
 }
+
+Signature.propTypes = {
+    name: PropTypes.string
+};
 
 export default Signature;

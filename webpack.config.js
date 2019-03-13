@@ -1,10 +1,16 @@
-
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: 'development',
-  entry: "./src/index.js",
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+    'webpack/hot/only-dev-server',
+    "./src/index.js"
+  ],
+
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "bundle.js",
@@ -30,8 +36,14 @@ module.exports = {
     ]
   },
   plugins: [
+    // OccurrenceOrderPlugin is needed for webpack 1.x only
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    // // Use NoErrorsPlugin for webpack 1.x
+    // new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     })
+
   ]
 };
