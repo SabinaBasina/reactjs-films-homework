@@ -1,10 +1,19 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
+import './Signature.scss';
+import styles from './Signature.css';
 
 class Signature extends Component {
     render() {
         return (
-            <h1>Hello 1 + f, {this.props.name}</h1>
+            <main>
+                <h1>Hello, {this.props.name}</h1>
+                <article className = {styles.about}>
+                    <p className = {styles.text}>
+                        Text
+                    </p>
+                </article>
+            </main>            
         );
     }
 }

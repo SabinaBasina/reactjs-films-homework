@@ -30,17 +30,18 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        loader: 'style-loader!css-loader?modules'
       }
     ]
   },
   plugins: [
-    // OccurrenceOrderPlugin is needed for webpack 1.x only
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    // // Use NoErrorsPlugin for webpack 1.x
-    // new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     })
