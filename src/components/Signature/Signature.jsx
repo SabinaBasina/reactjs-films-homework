@@ -10,7 +10,7 @@ class Signature extends Component {
                 <h1>Hello, {this.props.name}</h1>
                 <article className = {styles.about}>
                     <p className = {styles.text}>
-                        Text
+                        Text1
                     </p>
                 </article>
             </main>            
