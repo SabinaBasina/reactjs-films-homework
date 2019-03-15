@@ -1,0 +1,10 @@
+.TvShows {
+  text-align: center;
+}
+
+.TvShowLibrary {
+  margin-left: 12%;
+  margin-right: 12%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
