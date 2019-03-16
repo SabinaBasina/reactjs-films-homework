@@ -1,0 +1,36 @@
+.TvShow {
+  text-align: justify;
+}
+
+.TvShow h1 {
+  text-align: center;
+}
+
+.Information {
+  display: grid;
+  grid-template-columns: 240px 100%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.TvShowSummary {
+  margin-bottom: 50px;
+  margin-right: 20%;
+}
+
+.Episodes {
+  margin: 90px 15% 50px 15%;
+  height: 30px;
+  background-color: #222;
+  border-radius: 8px;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 820px) {
+  .Episodes {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

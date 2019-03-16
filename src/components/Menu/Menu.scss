@@ -1,0 +1,44 @@
+$back-color: #222;
+
+%header-buttons {
+  color: #9d9d9d;
+  border: none;
+  background-color: $back-color;
+  margin-top: 10px;
+}
+
+.Header {
+  display: block;
+  background-color: $back-color;
+  width: 100%;
+  height: 55px;
+  text-align: center;
+}
+
+.Header button:hover {
+  color: white;
+}
+
+.HeaderName {
+  @extend %header-buttons;
+
+  font-size: 35px;
+}
+
+.HeaderLogin {
+  @extend %header-buttons;
+
+  font-size: 16px;
+  margin-left: 58%;
+}
+
+@media only screen and (max-width: 526px) {
+  .Header {
+    height: 100px;
+  }
+
+  .HeaderLogin {
+    margin-left: 45%;
+    margin-right: 50%;
+  }
+}

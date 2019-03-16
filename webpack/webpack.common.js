@@ -25,15 +25,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jpg$/,
+        test: /\.(jpg|jpeg|png|gif)$/,
         use: [
+          'file-loader',
           {
-            loader: 'file-loader',
+            loader: 'image-webpack-loader',
             options: {
-              name: '[path][name].[ext]',
-            },
-          },
-        ],
+              disable: true
+            }
+          }
+        ]
       },
       {
         test: /\.(js|jsx)$/,
@@ -51,6 +52,9 @@ module.exports = {
             options: {
               modules: true
             }
+          },
+          {
+            loader: 'sass-loader'
           }
         ]
       },

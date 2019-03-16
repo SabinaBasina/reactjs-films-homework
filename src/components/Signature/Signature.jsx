@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './Signature.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from '../Home/Home.jsx';
+import Menu from '../Menu/Menu.jsx';
+import TvShowDetails from '../TvShowDetails/TvShowDetails.jsx';
 
 class Signature extends Component {
   render() {
@@ -14,8 +16,17 @@ class Signature extends Component {
             Text1
           </p>
         </article> */}
+       
         <Router>
-          <Route path='/' exact={true} component={Home}/>
+          <div>
+
+            <Menu/>
+
+            <Route path='/' exact={true} component={Home}/>
+            <Route path="/tvShowDetails/:id" 
+              render={(props)=> <TvShowDetails id={props.match.params.id}/> }/>
+
+          </div>
         </Router>  
       </main>          
     );

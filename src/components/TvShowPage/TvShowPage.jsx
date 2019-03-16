@@ -34,7 +34,7 @@ class TvShowPage extends Component {
   handleSearchQueryChanged(newQuery) { 
 
     if (newQuery === "") {
-      this.loadTvShows(this.props.page);
+      this.loadTvShows(0);
     }
 
     this.setState({ isReady: false });
@@ -44,6 +44,7 @@ class TvShowPage extends Component {
       .then(response => { 
         this.setState({ tvShows: response.data.map(data => data.show), isReady: true }); 
       });
+      
   }
 
   render() {

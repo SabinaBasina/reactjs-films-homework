@@ -2,17 +2,19 @@
 
 exports[`Signature test 1`] = `
 <main>
-  <h1>
-    Hello, 
-  </h1>
-  <article
-    className="about"
-  >
-    <p
-      className="text"
-    >
-      Text1
-    </p>
-  </article>
+  <BrowserRouter>
+    <div>
+      <Menu />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        path="/tvShowDetails/:id"
+        render={[Function]}
+      />
+    </div>
+  </BrowserRouter>
 </main>
 `;
