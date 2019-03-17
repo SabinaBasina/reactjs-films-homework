@@ -19,22 +19,17 @@ module.exports = {
 
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.js', '.jsx', ".css"],
+    extensions: ['.js', '.jsx', ".css", ".jpg", ".png"],
   },
 
   module: {
     rules: [
       {
-        test: /\.(jpg|jpeg|png|gif)$/,
+        test: /\.(jpg|png|gif)$/,
         use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              disable: true
-            }
-          }
-        ]
+          'file-loader?name=[hash:12].[ext]&outputPath=images/',
+          'image-webpack-loader'
+        ],
       },
       {
         test: /\.(js|jsx)$/,

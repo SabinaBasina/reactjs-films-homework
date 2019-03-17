@@ -13,14 +13,18 @@ class TvShow extends Component {
     
       <div className={styles.Episode}>
 
-        <b>{this.props.data.season} x {this.props.data.number}</b>
+        <b className={styles.Number}>
+          {this.props.data.season} x {this.props.data.number}
+        </b>
           
         <img src={this.props.data.image ? this.props.data.image.medium : NoImageEpisode} />
           
-        <p>
-          {this.props.data.name}
+        <div className={styles.About}>
+          <b> {this.props.data.name} </b>
+          <br/>
           <p dangerouslySetInnerHTML={{__html: this.props.data.summary}}/>
-        </p>
+        </div>
+
       </div>  
     );
   }

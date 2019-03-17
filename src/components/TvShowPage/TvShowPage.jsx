@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import http from 'axios';
 import TvShow from '../TvShow/TvShow.jsx';
 import Search from '../Search/Search.jsx';
-import styles from "./TvShowPage.scss";
+import styles from './TvShowPage.scss';
+import Loading from './Loading.gif';
 
 class TvShowPage extends Component {
   constructor(props) {
@@ -52,16 +53,21 @@ class TvShowPage extends Component {
     return (
       
       <main className = {styles.TvShows}>        
-
-        <Search onSearchQueryChanged={this.handleSearchQueryChanged}/>
-
-        {!this.state.isReady && <h3 className="text-center top">Loading...</h3>}
+        {/* {this.state.isReady =false} */}
+        {!this.state.isReady &&
+           <img 
+             src = {Loading}
+             className={styles.Ready} 
+           />}
 
         {this.state.isReady &&
-        <div className={styles.TvShowLibrary}>
-          {this.state.tvShows.map(tvShowData =>(
-            <TvShow data={tvShowData} /> 
-          ))} 
+        <div>
+          <Search onSearchQueryChanged={this.handleSearchQueryChanged}/>
+          <div className={styles.TvShowLibrary}>
+            {this.state.tvShows.map(tvShowData =>(
+              <TvShow data={tvShowData} /> 
+            ))}
+          </div> 
         </div>}
 
       </main>     

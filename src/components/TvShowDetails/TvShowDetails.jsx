@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from "./TvShowDetails.scss";
 import http from 'axios';
-import { Grid, Row, Col } from 'react-bootstrap';
+import Loading from '../TvShowPage/Loading.gif';
 import NoImage from '../TvShow/NoImage.jpg';
 import Episodes from '../Episodes/Episodes.jsx';
 
@@ -26,8 +26,12 @@ class TvShowDetails extends Component {
   render() {
     return (
       <div> 
-
-        {!this.state.isReady && <h3 className="text-center top">Loading...</h3>}
+        
+        {!this.state.isReady &&
+           <img 
+             src = {Loading}
+             className={styles.Ready} 
+           />}
 
         {this.state.isReady && 
 
@@ -37,8 +41,12 @@ class TvShowDetails extends Component {
 
               <div className={styles.Information}>  
 
-                <img src={this.state.tvShow.image === undefined ? NoImage : this.state.tvShow.image.medium} />
-                <div className={styles.TvShowSummary}>
+                <img 
+                  src={this.state.tvShow.image === undefined ? NoImage : this.state.tvShow.image.medium} 
+                  className = {styles.TvShowImage}
+                />
+                
+                <div>
                   <p dangerouslySetInnerHTML={{__html: this.state.tvShow.summary}}/>
                   <br/>                          
                   <b>Genres:</b> {this.state.tvShow.genres && this.state.tvShow.genres.join(", ")} 
@@ -49,6 +57,7 @@ class TvShowDetails extends Component {
                 </div>
 
               </div>
+               
                 
               <p className={styles.Episodes}>Episodes</p>                
               <Episodes nameTvShow = {this.state.tvShow.name} />

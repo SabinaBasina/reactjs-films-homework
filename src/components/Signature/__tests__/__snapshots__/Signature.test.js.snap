@@ -1,20 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signature test 1`] = `
-<main>
-  <BrowserRouter>
-    <div>
-      <Menu />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/"
-      />
-      <Route
-        path="/tvShowDetails/:id"
-        render={[Function]}
-      />
-    </div>
-  </BrowserRouter>
-</main>
+<BrowserRouter>
+  <div>
+    <Menu />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      path="/tvShowDetails/:id"
+      render={[Function]}
+    />
+  </div>
+</BrowserRouter>
 `;

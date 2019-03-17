@@ -30,6 +30,9 @@ class Home extends Component {
           
         <TvShowPage page={this.state.page} />
 
+        {(props) => <TvShowPage isReady={props.match.params.isReady} />}
+        
+        {console.log(this.props.isReady)}
         <div className={styles.Pager} > 
               
           {this.state.page > 0 &&
