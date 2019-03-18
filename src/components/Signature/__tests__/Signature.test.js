@@ -1,7 +1,7 @@
 import React from 'react';
-import Signature from '../Signature.jsx';
-//import renderer from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import Signature from '../Signature.jsx';
+// import renderer from 'react-test-renderer';
 
 test('Signature test', () => {
 // const component = renderer.create(
@@ -12,7 +12,6 @@ test('Signature test', () => {
   renderer.render(<Signature />);
   const result = renderer.getRenderOutput();
 
-    
+
   expect(result).toMatchSnapshot();
 });
-

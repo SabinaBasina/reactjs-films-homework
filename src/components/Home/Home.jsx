@@ -1,55 +1,74 @@
 import React, { Component } from 'react';
 import styles from './Home.scss';
-import TvShowPage from '../TvShowPage/TvShowPage.jsx';
+import TvShowPage from '../TvShowPage/TvShowPage';
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
+    this.onReady = this.onReady.bind(this);
+
     this.state = {
-      page: 0
+      page: 0,
+      ready: false,
     };
   }
 
-  increment() {
+  onReady(isReady) {
     this.setState({
-      page: this.state.page + 1
+      ready: isReady,
+    });
+  }
+
+  increment() {
+    const { page } = this.state;
+    this.setState({
+      page: page + 1,
     });
   }
 
   decrement() {
+    const { page } = this.state;
     this.setState({
-      page: this.state.page - 1
+      page: page - 1,
     });
   }
 
-  render() {    
-    return ( 
+  render() {
+    const { ready, page } = this.state;
+    return (
 
-      <main>    
-          
-        <TvShowPage page={this.state.page} />
+      <main>
 
-        {(props) => <TvShowPage isReady={props.match.params.isReady} />}
-        
-        {console.log(this.props.isReady)}
-        <div className={styles.Pager} > 
-              
-          {this.state.page > 0 &&
-            <button onClick={(e) => this.decrement(e)}>
-              &larr; Previous Page
-            </button>
-          }
+        <TvShowPage
+          onReady={this.onReady}
+          page={page}
+        />
 
-          <button onClick={(e) => this.increment(e)}>
-            Next Page &rarr;
-          </button>
+        {console.log(ready)} 
 
-        </div>
-          
+        {ready
+          && (
+            <div className={styles.Pager}>
+
+              {page > 0
+                && (
+                  <button type="button" onClick={e => this.decrement(e)}>
+                    &larr; Previous Page
+                  </button>
+                )
+              }
+
+              <button type="button" onClick={e => this.increment(e)}>
+                Next Page &rarr;
+              </button>
+
+            </div>
+          )}
+
 
       </main>
-      
+
     );
   }
 }

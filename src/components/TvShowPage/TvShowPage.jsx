@@ -10,12 +10,16 @@ class TvShowPage extends Component {
     super(props);
 
     this.handleSearchQueryChanged = this.handleSearchQueryChanged.bind(this);
+    this.readyChange = this.readyChange.bind(this);
 
     this.state = {
       tvShows: [],
       isReady: false
-    };
-    this.loadTvShows(this.props.page);
+    };    
+  }
+
+  componentDidMount() {
+    this.loadTvShows(this.props.page);    
   }
 
   componentWillReceiveProps(newProps) {
@@ -24,6 +28,7 @@ class TvShowPage extends Component {
 
   loadTvShows(page) {
     this.setState({ isReady: false });
+    
     http
       .get("https://api.tvmaze.com/shows?page=" + page)
       .then(response => { 
@@ -38,36 +43,42 @@ class TvShowPage extends Component {
       this.loadTvShows(0);
     }
 
-    this.setState({ isReady: false });
-
+    this.setState({ isReady: false});
+    
     http
       .get("https://api.tvmaze.com/search/shows?q=" + newQuery)
       .then(response => { 
-        this.setState({ tvShows: response.data.map(data => data.show), isReady: true }); 
+        this.setState({ tvShows: response.data.map(data => data.show), isReady: true}); 
       });
-      
+  }
+
+  readyChange(ready) {
+    this.props.onReady(ready);
   }
 
   render() {
-    
     return (
       
-      <main className = {styles.TvShows}>        
-        {/* {this.state.isReady =false} */}
-        {!this.state.isReady &&
+      <main className = {styles.TvShows}>   
+
+        {/* <button onClick={
+          this.readyChange
+        }>Запустить бумеранг</button>  */}
+
+        {!this.state.isReady && 
            <img 
              src = {Loading}
              className={styles.Ready} 
            />}
 
-        {this.state.isReady &&
+        {this.state.isReady && 
         <div>
-          <Search onSearchQueryChanged={this.handleSearchQueryChanged}/>
+          <Search onSearchQueryChanged={this.handleSearchQueryChanged} />
           <div className={styles.TvShowLibrary}>
             {this.state.tvShows.map(tvShowData =>(
               <TvShow data={tvShowData} /> 
             ))}
-          </div> 
+          </div>
         </div>}
 
       </main>     
