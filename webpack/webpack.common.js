@@ -1,12 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
 
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '../dist'),
     filename: 'bundle.js',
     publicPath: '/',
   },
@@ -52,13 +49,5 @@ module.exports = {
         loader: 'style-loader!css-loader?modules',
       },
     ],
-  },
-  plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-    new CleanWebpackPlugin(),
-  ],
+  }
 };

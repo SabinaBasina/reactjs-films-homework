@@ -1,42 +1,29 @@
 $back-color: #222;
 
-%header-buttons {
+.Header {
+  background-color: $back-color;
+  height: 55px;
+}
+
+.Header button {
   color: #9d9d9d;
   border: none;
   background-color: $back-color;
   margin-top: 5px;
-}
-
-.Header {
-  background-color: $back-color;
-  height: 55px;
-  text-align: center;
+  font-size: 35px;
+  margin-left: 20%;
 }
 
 .Header button:hover {
   color: white;
 }
 
-.HeaderName {
-  @extend %header-buttons;
-
-  font-size: 35px;
-}
-
-.HeaderLogin {
-  @extend %header-buttons;
-
-  font-size: 16px;
-  margin-left: 58%;
-}
-
-@media only screen and (max-width: 526px) {
+@media only screen and (max-width: 759px) {
   .Header {
-    height: 100px;
+    text-align: center;
   }
 
-  .HeaderLogin {
-    margin-left: 45%;
-    margin-right: 50%;
+  .Header button {
+    margin-left: 0;
   }
 }

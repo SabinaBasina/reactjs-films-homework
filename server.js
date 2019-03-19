@@ -3,7 +3,7 @@ const express = require('express');
 const webpack = require('webpack');
 
 const app = express();
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV.trim() === 'development') {
   const config = require('./webpack/webpack.dev.js');
   const compiler = webpack(config);
 
@@ -17,9 +17,15 @@ if (process.env.NODE_ENV === 'development') {
     path: '/__webpack_hmr',
     heartbeat: 10 * 1000,
   }));
+} else {
+  app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/dist/index.html');
+  });
 }
 
-app.use('/dist', express.static('./dist'));
+
+
+app.use('/', express.static('./dist'));
 
 // Serve the files on port 3000.
 app.listen(3000, () => {

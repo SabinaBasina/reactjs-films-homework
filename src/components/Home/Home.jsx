@@ -45,8 +45,6 @@ class Home extends Component {
           page={page}
         />
 
-        {console.log(ready)} 
-
         {ready
           && (
             <div className={styles.Pager}>

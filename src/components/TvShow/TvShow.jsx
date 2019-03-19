@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './TvShow.scss';
 import NoImage from './NoImage.jpg';
-import { Link } from "react-router-dom";
 
 class TvShow extends Component {
   constructor(props) {
@@ -10,21 +10,24 @@ class TvShow extends Component {
 
   render() {
     return (
-      <Link to={`/tvShowDetails/${this.props.data.id}`} className={styles.TvShow}>     
-        <br/> 
+      <Link to={`/tvShowDetails/${this.props.data.id}`} className={styles.TvShow}>
+        <br />
         <img src={this.props.data.image ? this.props.data.image.medium : NoImage} />
-        {this.props.data.rating && this.props.data.rating.average &&
-        <button className={styles.RatingTvShow}> 
-          {this.props.data.rating.average} 
-        </button>}
-        <p> 
+        {this.props.data.rating && this.props.data.rating.average
+        && (
+        <button className={styles.RatingTvShow}>
+          {this.props.data.rating.average}
+        </button>
+        )}
+        <p>
           {this.props.data.name}
-          <br/>
-          <span>{this.props.data.genres && 
-            this.props.data.genres.join(", ")}
-          </span> 
-        </p>  
-      </Link> 
+          <br />
+          <span>
+            {this.props.data.genres
+            && this.props.data.genres.join(', ')}
+          </span>
+        </p>
+      </Link>
     );
   }
 }

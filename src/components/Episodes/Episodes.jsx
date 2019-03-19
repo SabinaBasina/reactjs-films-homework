@@ -7,26 +7,25 @@ class Episodes extends Component {
     super(props);
 
     this.state = {
-      tvShow: []
+      tvShow: [],
     };
 
-        
+
     http
-      .get("https://api.tvmaze.com/singlesearch/shows?q=" + this.props.nameTvShow + "&embed=episodes")
-      .then(response => {
-        this.setState({ tvShow: response.data}); 
+      .get(`https://api.tvmaze.com/singlesearch/shows?q=${this.props.nameTvShow}&embed=episodes`)
+      .then((response) => {
+        this.setState({ tvShow: response.data });
       });
-      
   }
-    
+
   render() {
     return (
-      <div> 
-        {this.state.tvShow._embedded && 
-            this.state.tvShow._embedded.episodes.map(episode =>(
-              <Episode data={episode} /> 
-            ))} 
-      </div>    
+      <div>
+        {this.state.tvShow._embedded
+            && this.state.tvShow._embedded.episodes.map(episode => (
+              <Episode data={episode} />
+            ))}
+      </div>
     );
   }
 }
