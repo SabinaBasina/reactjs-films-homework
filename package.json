@@ -8,7 +8,7 @@
     "build": "webpack --config webpack/webpack.prod.js",
     "start": "SET NODE_ENV=development && node server.js ",
     "prod": "SET NODE_ENV=production && npm run build && node server.js",
-    "lint": "eslint --debug src/components/TvShow/TvShow.jsx --fix && stylelint src/**/*.scss"
+    "lint": "eslint --debug src/ && stylelint src/**/*.scss"
   },
   "husky": {
     "hooks": {
