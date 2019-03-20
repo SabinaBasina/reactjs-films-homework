@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signature test 1`] = `
+<<<<<<< HEAD
 <main>
   <h1>
     Hello,
@@ -16,4 +17,20 @@ exports[`Signature test 1`] = `
     </p>
   </article>
 </main>
+=======
+<BrowserRouter>
+  <div>
+    <Menu />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      path="/tvShowDetails/:id"
+      render={[Function]}
+    />
+  </div>
+</BrowserRouter>
+>>>>>>> origin/part2
 `;

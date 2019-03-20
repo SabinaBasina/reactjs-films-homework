@@ -1,0 +1,12 @@
+@import '../TvShowDetails/TvShowDetails.scss';
+
+.TvShows {
+  text-align: center;
+}
+
+.TvShowLibrary {
+  margin-left: 15%;
+  margin-right: 15%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
