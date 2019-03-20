@@ -7,8 +7,8 @@
     "test": "jest",
     "build": "webpack --config webpack/webpack.prod.js",
     "start": "SET NODE_ENV=development && node server.js ",
-    "prod": "SET NODE_ENV=production && node server.js",
-    "lint": "eslint --debug src/ && stylelint src/"
+    "prod": "SET NODE_ENV=production && npm run build && node server.js",
+    "lint": "eslint --debug src/ && stylelint src/**/*.scss"
   },
   "husky": {
     "hooks": {
@@ -18,6 +18,7 @@
   },
   "jest": {
     "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss)$": "identity-obj-proxy"
     },
     "collectCoverageFrom": [
@@ -51,7 +52,9 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-hot-loader": "^4.8.0",
-    "react-test-renderer": "^16.8.4"
+    "react-test-renderer": "^16.8.4",
+    "webpack-merge": "^4.2.1",
+    "webpack": "^4.29.6"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -80,10 +83,8 @@
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-webpack-plugin": "^0.10.5",
-    "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-middleware": "^3.6.1",
-    "webpack-hot-middleware": "^2.24.3",
-    "webpack-merge": "^4.2.1"
+    "webpack-hot-middleware": "^2.24.3"
   }
 }

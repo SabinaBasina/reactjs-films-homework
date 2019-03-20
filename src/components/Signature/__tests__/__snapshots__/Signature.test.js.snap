@@ -3,7 +3,8 @@
 exports[`Signature test 1`] = `
 <main>
   <h1>
-    Hello, 
+    Hello,
+    Name
   </h1>
   <article
     className="about"
