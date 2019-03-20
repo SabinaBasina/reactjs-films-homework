@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styles from './TvShow.scss';
 import NoImage from './NoImage.jpg';
 
-class TvShow extends Component {
+class TvShow extends PureComponent {
   render() {
     const { data } = this.props;
     return (
@@ -31,3 +31,7 @@ class TvShow extends Component {
 
 
 export default TvShow;
+
+TvShow.propTypes = {
+  data: PropTypes.string.isRequired,
+};

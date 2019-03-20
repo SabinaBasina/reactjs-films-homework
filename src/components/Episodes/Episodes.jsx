@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import http from 'axios';
+import PropTypes from 'prop-types';
 import Episode from '../Episode/Episode';
 
 class Episodes extends Component {
@@ -35,3 +35,7 @@ class Episodes extends Component {
 }
 
 export default Episodes;
+
+Episodes.propTypes = {
+  nameTvShow: PropTypes.string.isRequired,
+};

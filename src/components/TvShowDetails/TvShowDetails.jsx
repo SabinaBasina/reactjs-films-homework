@@ -1,5 +1,7 @@
+/* eslint-disable react/no-danger */
 import React, { Component } from 'react';
 import http from 'axios';
+import PropTypes from 'prop-types';
 import styles from './TvShowDetails.scss';
 import Loading from '../TvShowPage/Loading.gif';
 import NoImage from '../TvShow/NoImage.jpg';
@@ -14,7 +16,6 @@ class TvShowDetails extends Component {
       isReady: false,
     };
 
-    // eslint-disable-next-line react/prop-types
     const { id } = this.props;
 
     http
@@ -86,3 +87,7 @@ class TvShowDetails extends Component {
 }
 
 export default TvShowDetails;
+
+TvShowDetails.propTypes = {
+  id: PropTypes.number.isRequired,
+};

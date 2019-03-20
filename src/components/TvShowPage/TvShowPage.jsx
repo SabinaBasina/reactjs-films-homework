@@ -1,9 +1,6 @@
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/sort-comp */
-/* eslint-disable no-undef */
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import http from 'axios';
+import PropTypes from 'prop-types';
 import TvShow from '../TvShow/TvShow';
 import Search from '../Search/Search';
 import styles from './TvShowPage.scss';
@@ -35,6 +32,11 @@ class TvShowPage extends Component {
     }
   }
 
+  setReadyState(newIsReady) {
+    const { onReady } = this.props;
+    this.setState({ isReady: newIsReady });
+    onReady(newIsReady);
+  }
 
   loadTvShows(page) {
     this.setReadyState(false);
@@ -42,7 +44,6 @@ class TvShowPage extends Component {
     http
       .get(`https://api.tvmaze.com/shows?page=${page}`)
       .then((response) => {
-        window.scrollTo(0, 0);
         this.setState({ tvShows: response.data });
         this.setReadyState(true);
       });
@@ -63,11 +64,6 @@ class TvShowPage extends Component {
       });
   }
 
-  setReadyState(newIsReady) {
-    const { onReady } = this.props;
-    this.setState({ isReady: newIsReady });
-    onReady(newIsReady);
-  }
 
   render() {
     const { isReady, tvShows } = this.state;
@@ -103,3 +99,8 @@ class TvShowPage extends Component {
 }
 
 export default TvShowPage;
+
+TvShowPage.propTypes = {
+  onReady: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
+};

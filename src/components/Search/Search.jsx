@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Search.scss';
 
 class Search extends Component {
@@ -46,3 +46,7 @@ class Search extends Component {
 }
 
 export default Search;
+
+Search.propTypes = {
+  onSearchQueryChanged: PropTypes.func.isRequired,
+};
