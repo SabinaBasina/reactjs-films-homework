@@ -16,11 +16,7 @@ module.exports = merge(common, {
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
     'webpack/hot/only-dev-server',
-<<<<<<< HEAD
     './src/index.js',
-=======
-    './src/index.js'
->>>>>>> origin/part2
   ],
 
   plugins: [
@@ -30,19 +26,11 @@ module.exports = merge(common, {
     }),
     new CleanWebpackPlugin(
       {
-<<<<<<< HEAD
         verbose: true,
       },
     ),
   ],
 
   devtool: 'inline-source-map',
-=======
-        verbose: true
-      })   
-  ],
-
-  devtool: 'inline-source-map'
->>>>>>> origin/part2
 
 });
