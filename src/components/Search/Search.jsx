@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import styles from './Search.scss';
 
@@ -18,16 +19,19 @@ class Search extends Component {
   }
 
   handleClick() {
-    this.props.onSearchQueryChanged(this.state.value);
+    const { onSearchQueryChanged } = this.props;
+    const { value } = this.state;
+    onSearchQueryChanged(value);
   }
 
   render() {
+    const { value } = this.state;
     return (
       <div className="Search">
         <input
           className={styles.InputSearch}
           type="text"
-          value={this.state.value}
+          value={value}
           onChange={this.handleChange}
           onKeyPress={(e) => {
             if (e.key === 'Enter') {

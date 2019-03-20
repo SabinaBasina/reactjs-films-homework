@@ -3,7 +3,7 @@ import http from 'axios';
 import styles from './TvShowDetails.scss';
 import Loading from '../TvShowPage/Loading.gif';
 import NoImage from '../TvShow/NoImage.jpg';
-import Episodes from '../Episodes/Episodes.jsx';
+import Episodes from '../Episodes/Episodes';
 
 class TvShowDetails extends Component {
   constructor(props) {
@@ -14,8 +14,11 @@ class TvShowDetails extends Component {
       isReady: false,
     };
 
+    // eslint-disable-next-line react/prop-types
+    const { id } = this.props;
+
     http
-      .get(`https://api.tvmaze.com/shows/${this.props.id}`)
+      .get(`https://api.tvmaze.com/shows/${id}`)
       .then((response) => {
         this.setState({ tvShow: response.data, isReady: true });
       });
@@ -23,52 +26,55 @@ class TvShowDetails extends Component {
 
 
   render() {
+    const { isReady, tvShow } = this.state;
     return (
       <div>
 
-        {!this.state.isReady
+        {!isReady
            && (
            <img
              src={Loading}
              className={styles.Ready}
+             alt=""
            />
            )}
 
-        {this.state.isReady
+        {isReady
 
             && (
             <div className={styles.TvShow}>
 
-              <h1>{this.state.tvShow.name}</h1>
+              <h1>{tvShow.name}</h1>
 
               <div className={styles.Information}>
 
                 <img
-                  src={this.state.tvShow.image === undefined ? NoImage : this.state.tvShow.image.medium}
+                  src={tvShow.image === undefined ? NoImage : tvShow.image.medium}
                   className={styles.TvShowImage}
+                  alt=""
                 />
 
                 <div>
-                  <p dangerouslySetInnerHTML={{ __html: this.state.tvShow.summary }} />
+                  <p dangerouslySetInnerHTML={{ __html: tvShow.summary }} />
                   <br />
                   <b>Genres:</b>
                   {' '}
-                  {this.state.tvShow.genres && this.state.tvShow.genres.join(', ')}
+                  {tvShow.genres && tvShow.genres.join(', ')}
                   <br />
                   <b>Country:</b>
                   {' '}
-                  {this.state.tvShow.network && this.state.tvShow.network.country.name}
+                  {tvShow.network && tvShow.network.country.name}
                   <br />
                   <b>Premiered:</b>
                   {' '}
-                  <time>{this.state.tvShow.premiered}</time>
+                  <time>{tvShow.premiered}</time>
                 </div>
 
               </div>
 
 
               <p className={styles.Episodes}>Episodes</p>
-              <Episodes nameTvShow={this.state.tvShow.name} />
+              <Episodes nameTvShow={tvShow.name} />
 
             </div>
             )

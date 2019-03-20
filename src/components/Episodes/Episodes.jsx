@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import http from 'axios';
-import Episode from '../Episode/Episode.jsx';
+import Episode from '../Episode/Episode';
 
 class Episodes extends Component {
   constructor(props) {
@@ -10,19 +12,21 @@ class Episodes extends Component {
       tvShow: [],
     };
 
+    const { nameTvShow } = this.props;
 
     http
-      .get(`https://api.tvmaze.com/singlesearch/shows?q=${this.props.nameTvShow}&embed=episodes`)
+      .get(`https://api.tvmaze.com/singlesearch/shows?q=${nameTvShow}&embed=episodes`)
       .then((response) => {
         this.setState({ tvShow: response.data });
       });
   }
 
   render() {
+    const { tvShow } = this.state;
     return (
       <div>
-        {this.state.tvShow._embedded
-            && this.state.tvShow._embedded.episodes.map(episode => (
+        { tvShow._embedded
+            && tvShow._embedded.episodes.map(episode => (
               <Episode data={episode} />
             ))}
       </div>

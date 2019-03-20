@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-extraneous-dependencies */
+
 const express = require('express');
 
 const webpack = require('webpack');

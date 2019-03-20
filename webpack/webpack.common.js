@@ -49,9 +49,5 @@ module.exports = {
         loader: 'style-loader!css-loader?modules',
       },
     ],
-<<<<<<< HEAD
   },
-=======
-  }
->>>>>>> origin/part2
 };

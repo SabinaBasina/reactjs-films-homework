@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styles from './Menu.scss';
 
 class Menu extends Component {
-
   render() {
     return (
       <header className={styles.Header}>

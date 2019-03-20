@@ -1,3 +1,7 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable react/sort-comp */
+/* eslint-disable no-undef */
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import http from 'axios';
 import TvShow from '../TvShow/TvShow';
@@ -19,12 +23,15 @@ class TvShowPage extends Component {
   }
 
   componentDidMount() {
-    this.loadTvShows(this.props.page);
+    const { page } = this.props;
+    this.loadTvShows(page);
   }
 
   componentDidUpdate(prevProps) {
-    if ((this.props.page !== prevProps.page) && this.state.isReady) {
-      this.loadTvShows(this.props.page);
+    const { page } = this.props;
+    const { isReady } = this.state;
+    if ((page !== prevProps.page) && isReady) {
+      this.loadTvShows(page);
     }
   }
 
@@ -57,29 +64,32 @@ class TvShowPage extends Component {
   }
 
   setReadyState(newIsReady) {
+    const { onReady } = this.props;
     this.setState({ isReady: newIsReady });
-    this.props.onReady(newIsReady);
+    onReady(newIsReady);
   }
 
   render() {
+    const { isReady, tvShows } = this.state;
     return (
 
       <main className={styles.TvShows}>
 
-        {!this.state.isReady
+        {!isReady
            && (
              <img
                src={Loading}
                className={styles.Ready}
+               alt=""
              />
            )}
 
-        {this.state.isReady
+        {isReady
         && (
           <div>
             <Search onSearchQueryChanged={this.handleSearchQueryChanged} />
             <div className={styles.TvShowLibrary}>
-              {this.state.tvShows.map(tvShowData => (
+              {tvShows.map(tvShowData => (
                 <TvShow data={tvShowData} />
               ))}
             </div>
