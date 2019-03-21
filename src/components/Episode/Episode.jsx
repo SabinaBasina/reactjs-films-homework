@@ -5,7 +5,7 @@ import styles from './Episode.scss';
 import NoImageEpisode from './NoImageEpisode.jpg';
 
 
-class TvShow extends PureComponent {
+class Episode extends PureComponent {
   render() {
     const { data } = this.props;
     return (
@@ -18,13 +18,11 @@ class TvShow extends PureComponent {
           {data.number}
         </b>
 
-        <img src={data.image ? data.image.medium : NoImageEpisode} alt="" />
+        <img src={data.image ? data.image.medium : NoImageEpisode} alt="EpisodeImage" />
 
         <div className={styles.About}>
           <b>
-            {' '}
             {data.name}
-            {' '}
           </b>
           <br />
           <p dangerouslySetInnerHTML={{ __html: data.summary }} />
@@ -35,8 +33,12 @@ class TvShow extends PureComponent {
   }
 }
 
-export default TvShow;
+export default Episode;
 
-TvShow.propTypes = {
-  data: PropTypes.string.isRequired,
+Episode.propTypes = {
+  data: PropTypes.string,
+};
+
+Episode.defaultProps = {
+  data: 'undefined',
 };

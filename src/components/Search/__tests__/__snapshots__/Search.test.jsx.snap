@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search test 1`] = `
+<div
+  className="Search"
+>
+  <input
+    className="InputSearch"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    placeholder="Search"
+    type="text"
+    value=""
+  />
+</div>
+`;

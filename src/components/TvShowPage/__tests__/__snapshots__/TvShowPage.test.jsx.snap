@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShowPage test 1`] = `
+<main
+  className="TvShows"
+>
+  <img
+    alt=""
+    className="Ready"
+    src="test-file-stub"
+  />
+</main>
+`;

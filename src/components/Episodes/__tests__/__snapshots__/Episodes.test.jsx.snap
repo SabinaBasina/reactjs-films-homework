@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Episode test 1`] = `
+<div
+  className="Episode"
+>
+  <b
+    className="Number"
+  >
+    x
+  </b>
+  <img
+    alt="EpisodeImage"
+    src="test-file-stub"
+  />
+  <div
+    className="About"
+  >
+    <b />
+    <br />
+    <p
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": undefined,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Episodes test 1`] = `<div />`;

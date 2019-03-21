@@ -33,5 +33,9 @@ class TvShow extends PureComponent {
 export default TvShow;
 
 TvShow.propTypes = {
-  data: PropTypes.string.isRequired,
+  data: PropTypes.string,
+};
+
+TvShow.defaultProps = {
+  data: 'undefined',
 };

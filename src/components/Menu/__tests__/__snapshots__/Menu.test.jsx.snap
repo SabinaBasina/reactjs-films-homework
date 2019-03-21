@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu test 1`] = `
+<header
+  className="Header"
+>
+  <Link
+    replace={false}
+    to="/"
+  >
+    <button
+      type="button"
+    >
+      TvShows
+    </button>
+  </Link>
+</header>
+`;

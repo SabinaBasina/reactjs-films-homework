@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShow test img is 1`] = `
+<Link
+  className="TvShow"
+  replace={false}
+  to="/tvShowDetails/undefined"
+>
+  <br />
+  <img
+    alt=""
+    src="medium"
+  />
+  <p>
+    <br />
+    <span />
+  </p>
+</Link>
+`;
+
+exports[`TvShow test img no 1`] = `
+<Link
+  className="TvShow"
+  replace={false}
+  to="/tvShowDetails/undefined"
+>
+  <br />
+  <img
+    alt=""
+    src="test-file-stub"
+  />
+  <p>
+    <br />
+    <span />
+  </p>
+</Link>
+`;
+
+exports[`TvShow test rating 1`] = `
+<Link
+  className="TvShow"
+  replace={false}
+  to="/tvShowDetails/undefined"
+>
+  <br />
+  <img
+    alt=""
+    src="test-file-stub"
+  />
+  <button
+    className="RatingTvShow"
+    type="button"
+  >
+    rating
+  </button>
+  <p>
+    <br />
+    <span />
+  </p>
+</Link>
+`;

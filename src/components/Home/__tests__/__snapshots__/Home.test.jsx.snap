@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home test 1`] = `
+<main>
+  <TvShowPage
+    onReady={[Function]}
+    page={0}
+  />
+</main>
+`;
