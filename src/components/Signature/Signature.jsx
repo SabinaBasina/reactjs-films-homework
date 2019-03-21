@@ -1,12 +1,12 @@
 /* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './Signature.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import Menu from '../Menu/Menu';
 import TvShowDetails from '../TvShowDetails/TvShowDetails';
 
-class Signature extends Component {
+class Signature extends PureComponent {
   render() {
     return (
       <Router>
