@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "webpack --config webpack/webpack.prod.js",
     "start": "SET NODE_ENV=development && node server.js ",
     "prod": "SET NODE_ENV=production && npm run build && node server.js",
@@ -25,7 +25,7 @@
       "**/*.{js,jsx}"
     ],
     "coverageThreshold": {
-      "./src/": {
+      "./src/components": {
         "branches": 100,
         "functions": 100,
         "lines": 100,

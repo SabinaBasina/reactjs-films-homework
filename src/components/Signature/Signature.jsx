@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Signature.scss';
 
-
-class Signature extends Component {
+class Signature extends PureComponent {
   render() {
     const { name } = this.props;
     return (

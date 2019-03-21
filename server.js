@@ -1,10 +1,12 @@
 /* eslint-disable global-require */
+/* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
-const express = require('express');
 
+const express = require('express');
 const webpack = require('webpack');
 
 const app = express();
+
 if (process.env.NODE_ENV.trim() === 'development') {
   const config = require('./webpack/webpack.dev.js');
   const compiler = webpack(config);
