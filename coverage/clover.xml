@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1553255488100" clover="3.2.0">
-  <project timestamp="1553255488101" name="All files">
-    <metrics statements="213" coveredstatements="45" conditionals="362" coveredconditionals="18" methods="90" coveredmethods="17" elements="665" coveredelements="80" complexity="0" loc="213" ncloc="213" packages="13" files="18" classes="18"/>
+<coverage generated="1553272893967" clover="3.2.0">
+  <project timestamp="1553272893967" name="All files">
+    <metrics statements="204" coveredstatements="37" conditionals="362" coveredconditionals="22" methods="87" coveredmethods="15" elements="653" coveredelements="74" complexity="0" loc="204" ncloc="204" packages="13" files="18" classes="18"/>
     <package name="reactjs-films-homework">
       <metrics statements="13" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="server.js" path="C:\Users\Sabina_Basina\reactjs-films-homework\server.js">
@@ -155,41 +155,37 @@
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="42" count="3" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
       </file>
     </package>
     <package name="reactjs-films-homework.src.components.Episodes">
-      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <file name="Episodes.jsx" path="C:\Users\Sabina_Basina\reactjs-films-homework\src\components\Episodes\Episodes.jsx">
-        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
       </file>
     </package>
     <package name="reactjs-films-homework.src.components.Home">
-      <metrics statements="12" coveredstatements="5" conditionals="4" coveredconditionals="1" methods="7" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="2" conditionals="4" coveredconditionals="1" methods="6" coveredmethods="1"/>
       <file name="Home.jsx" path="C:\Users\Sabina_Basina\reactjs-films-homework\src\components\Home\Home.jsx">
-        <metrics statements="12" coveredstatements="5" conditionals="4" coveredconditionals="1" methods="7" coveredmethods="2"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <metrics statements="9" coveredstatements="2" conditionals="4" coveredconditionals="1" methods="6" coveredmethods="1"/>
+        <line num="12" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
       </file>
     </package>
     <package name="reactjs-films-homework.src.components.Menu">
@@ -200,22 +196,18 @@
       </file>
     </package>
     <package name="reactjs-films-homework.src.components.Search">
-      <metrics statements="13" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
       <file name="Search.jsx" path="C:\Users\Sabina_Basina\reactjs-films-homework\src\components\Search\Search.jsx">
-        <metrics statements="13" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="2"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="50" count="4" type="stmt"/>
+        <metrics statements="9" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
       </file>
     </package>
     <package name="reactjs-films-homework.src.components.Signature">
@@ -237,17 +229,16 @@
       </file>
     </package>
     <package name="reactjs-films-homework.src.components.TvShowDetails">
-      <metrics statements="8" coveredstatements="7" conditionals="10" coveredconditionals="3" methods="3" coveredmethods="2"/>
+      <metrics statements="7" coveredstatements="7" conditionals="10" coveredconditionals="7" methods="3" coveredmethods="3"/>
       <file name="TvShowDetails.jsx" path="C:\Users\Sabina_Basina\reactjs-films-homework\src\components\TvShowDetails\TvShowDetails.jsx">
-        <metrics statements="8" coveredstatements="7" conditionals="10" coveredconditionals="3" methods="3" coveredmethods="2"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="91" count="2" type="stmt"/>
+        <metrics statements="7" coveredstatements="7" conditionals="10" coveredconditionals="7" methods="3" coveredmethods="3"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
       </file>
     </package>
     <package name="reactjs-films-homework.src.components.TvShowPage">

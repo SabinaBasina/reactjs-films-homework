@@ -8,14 +8,12 @@ import NoImage from '../TvShow/NoImage.jpg';
 import Episodes from '../Episodes/Episodes';
 
 class TvShowDetails extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    tvShow: {},
+    isReady: false,
+  }
 
-    this.state = {
-      tvShow: {},
-      isReady: false,
-    };
-
+  componentDidMount() {
     const { id } = this.props;
 
     http
@@ -59,15 +57,12 @@ class TvShowDetails extends Component {
                   <p dangerouslySetInnerHTML={{ __html: tvShow.summary }} />
                   <br />
                   <b>Genres:</b>
-                  {' '}
-                  {tvShow.genres && tvShow.genres.join(', ')}
+                  {tvShow.genres && Array.prototype.join.call(tvShow.genres, ', ')}
                   <br />
                   <b>Country:</b>
-                  {' '}
                   {tvShow.network && tvShow.network.country.name}
                   <br />
                   <b>Premiered:</b>
-                  {' '}
                   <time>{tvShow.premiered}</time>
                 </div>
 
@@ -89,5 +84,9 @@ class TvShowDetails extends Component {
 export default TvShowDetails;
 
 TvShowDetails.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string,
+};
+
+TvShowDetails.defaultProps = {
+  id: 'undefined',
 };

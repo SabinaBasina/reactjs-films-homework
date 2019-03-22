@@ -3,22 +3,15 @@ import PropTypes from 'prop-types';
 import styles from './Search.scss';
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-
-    this.state = {
-      value: '',
-    };
+  state = {
+    value: '',
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({ value: e.target.value });
   }
 
-  handleClick() {
+  handleClick = () => {
     const { onSearchQueryChanged } = this.props;
     const { value } = this.state;
     onSearchQueryChanged(value);

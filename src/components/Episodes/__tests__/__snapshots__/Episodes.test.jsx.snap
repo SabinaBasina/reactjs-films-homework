@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Episodes test 2 1`] = `
+exports[`test Episodes test 1`] = `
 <div
   className="tv-show"
 />
+`;
+
+exports[`test Episodes test 2 1`] = `
+<div
+  className="tv-show"
+>
+  mock data{"data":{"data":1}}
+  mock data{"data":{"data":2}}
+</div>
 `;

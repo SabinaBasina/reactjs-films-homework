@@ -21,7 +21,7 @@ class TvShow extends PureComponent {
           {data.name}
           <br />
           <span>
-            {data.genres && data.genres.join(', ')}
+            {data.genres && Array.prototype.join.call(data.genres, ', ')}
           </span>
         </p>
       </Link>

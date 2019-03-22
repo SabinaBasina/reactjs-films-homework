@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TvShow test genres 1`] = `
+<Link
+  className="TvShow"
+  replace={false}
+  to="/tvShowDetails/undefined"
+>
+  <br />
+  <img
+    alt=""
+    src="test-file-stub"
+  />
+  <p>
+    <br />
+    <span>
+      g, e, n, r, e, s
+    </span>
+  </p>
+</Link>
+`;
+
 exports[`TvShow test img is 1`] = `
 <Link
   className="TvShow"

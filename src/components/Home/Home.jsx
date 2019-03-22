@@ -3,18 +3,12 @@ import styles from './Home.scss';
 import TvShowPage from '../TvShowPage/TvShowPage';
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-
-    this.onReady = this.onReady.bind(this);
-
-    this.state = {
-      page: 0,
-      ready: false,
-    };
+  state = {
+    page: 0,
+    ready: false,
   }
 
-  onReady(isReady) {
+  onReady = (isReady) => {
     this.setState({
       ready: isReady,
     });

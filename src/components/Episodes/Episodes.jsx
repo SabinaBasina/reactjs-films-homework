@@ -5,13 +5,9 @@ import PropTypes from 'prop-types';
 import Episode from '../Episode/Episode';
 
 class Episodes extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      tvShow: [],
-    };
-  }
+  state = {
+    tvShow: [],
+  };
 
   componentDidMount() {
     const { nameTvShow } = this.props;
@@ -37,5 +33,9 @@ class Episodes extends Component {
 export default Episodes;
 
 Episodes.propTypes = {
-  nameTvShow: PropTypes.string.isRequired,
+  nameTvShow: PropTypes.string,
+};
+
+Episodes.defaultProps = {
+  nameTvShow: 'undefined',
 };
