@@ -11,9 +11,10 @@ class Episodes extends Component {
     this.state = {
       tvShow: [],
     };
+  }
 
+  componentDidMount() {
     const { nameTvShow } = this.props;
-
     http
       .get(`https://api.tvmaze.com/singlesearch/shows?q=${nameTvShow}&embed=episodes`)
       .then((response) => {
@@ -24,11 +25,10 @@ class Episodes extends Component {
   render() {
     const { tvShow } = this.state;
     return (
-      <div>
-        { tvShow._embedded
-            && tvShow._embedded.episodes.map(episode => (
-              <Episode data={episode} />
-            ))}
+      <div className="tv-show">
+        {tvShow._embedded
+          && tvShow._embedded.episodes.map(episode => <Episode data={episode} />)
+        }
       </div>
     );
   }
