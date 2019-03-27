@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './Home.scss';
-import TvShowPage from '../TvShowPage/TvShowPage';
+import TvShowPage from '../TvShowPage';
 
 class Home extends Component {
   state = {
-    page: 0,
     ready: false,
   }
 
@@ -14,22 +15,19 @@ class Home extends Component {
     });
   }
 
-  increment() {
-    const { page } = this.state;
-    this.setState({
-      page: page + 1,
-    });
+  increment = () => {
+    const { onIncrement } = this.props;
+    onIncrement();
   }
 
-  decrement() {
-    const { page } = this.state;
-    this.setState({
-      page: page - 1,
-    });
+  decrement = () => {
+    const { onDecrement } = this.props;
+    onDecrement();
   }
 
   render() {
-    const { ready, page } = this.state;
+    const { ready } = this.state;
+    const { page } = this.props;
     return (
 
       <main>
@@ -66,3 +64,15 @@ class Home extends Component {
 }
 
 export default Home;
+
+Home.propTypes = {
+  page: PropTypes.number,
+  onIncrement: PropTypes.func,
+  onDecrement: PropTypes.func,
+};
+
+Home.defaultProps = {
+  page: 'undefined',
+  onIncrement: 'undefined',
+  onDecrement: 'undefined',
+};

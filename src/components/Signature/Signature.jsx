@@ -1,10 +1,18 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { PureComponent } from 'react';
-import './Signature.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from '../Home/Home';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+
+import './Signature.scss';
+import Home from '../Home';
 import Menu from '../Menu/Menu';
-import TvShowDetails from '../TvShowDetails/TvShowDetails';
+import TvShowDetails from '../TvShowDetails';
+import reducer from '../../redux/reducers';
+
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
 class Signature extends PureComponent {
   render() {
@@ -14,11 +22,16 @@ class Signature extends PureComponent {
 
           <Menu />
 
-          <Route path="/" exact component={Home} />
-          <Route
-            path="/tvShowDetails/:id"
-            render={props => <TvShowDetails id={props.match.params.id} />}
-          />
+          <Provider store={store}>
+
+            <Route path="/" exact component={Home} />
+
+            <Route
+              path="/tvShowDetails/:id"
+              render={props => <TvShowDetails id={props.match.params.id} />}
+            />
+
+          </Provider>
 
         </div>
       </Router>

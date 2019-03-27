@@ -2,9 +2,9 @@
 
 exports[`Home test 1`] = `
 <main>
-  <TvShowPage
+  <Connect(TvShowPage)
     onReady={[Function]}
-    page={0}
+    page="undefined"
   />
 </main>
 `;

@@ -4,15 +4,27 @@ exports[`Signature test 1`] = `
 <BrowserRouter>
   <div>
     <Menu />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/"
-    />
-    <Route
-      path="/tvShowDetails/:id"
-      render={[Function]}
-    />
+    <Provider
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        path="/tvShowDetails/:id"
+        render={[Function]}
+      />
+    </Provider>
   </div>
 </BrowserRouter>
 `;

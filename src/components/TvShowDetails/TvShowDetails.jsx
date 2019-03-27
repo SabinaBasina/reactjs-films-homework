@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 import React, { Component } from 'react';
-import http from 'axios';
 import PropTypes from 'prop-types';
+
 import styles from './TvShowDetails.scss';
 import Loading from '../TvShowPage/Loading.gif';
 import NoImage from '../TvShow/NoImage.jpg';
@@ -9,23 +9,23 @@ import Episodes from '../Episodes/Episodes';
 
 class TvShowDetails extends Component {
   state = {
-    tvShow: {},
-    isReady: false,
+    isReady: true,
   }
 
   componentDidMount() {
-    const { id } = this.props;
-
-    http
-      .get(`https://api.tvmaze.com/shows/${id}`)
-      .then((response) => {
-        this.setState({ tvShow: response.data, isReady: true });
-      });
+    const { id, loadTvShowsDetails } = this.props;
+    loadTvShowsDetails(id);
   }
 
 
   render() {
-    const { isReady, tvShow } = this.state;
+    const { isReady } = this.state;
+    const { tvShow } = this.props;
+
+    if (!tvShow) {
+      return null;
+    }
+
     return (
       <div>
 
@@ -34,7 +34,7 @@ class TvShowDetails extends Component {
            <img
              src={Loading}
              className={styles.Ready}
-             alt=""
+             alt="Loading page"
            />
            )}
 
@@ -85,8 +85,11 @@ export default TvShowDetails;
 
 TvShowDetails.propTypes = {
   id: PropTypes.string,
+  loadTvShowsDetails: PropTypes.func,
+  tvShow: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 TvShowDetails.defaultProps = {
+  loadTvShowsDetails: () => { },
   id: 'undefined',
 };

@@ -36,9 +36,9 @@ class Episode extends PureComponent {
 export default Episode;
 
 Episode.propTypes = {
-  data: PropTypes.string,
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
-Episode.defaultProps = {
-  data: 'undefined',
-};
+// Episode.defaultProps = {
+//   data: 'undefined',
+// };

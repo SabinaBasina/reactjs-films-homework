@@ -3,32 +3,23 @@ import PropTypes from 'prop-types';
 import styles from './Search.scss';
 
 class Search extends Component {
-  state = {
-    value: '',
-  }
+  tvInput = React.createRef();
 
-  handleChange = (e) => {
-    this.setState({ value: e.target.value });
-  }
-
-  handleClick = () => {
-    const { onSearchQueryChanged } = this.props;
-    const { value } = this.state;
-    onSearchQueryChanged(value);
+  findTv = () => {
+    const { onFindTv } = this.props;
+    onFindTv(this.tvInput.current.value);
   }
 
   render() {
-    const { value } = this.state;
     return (
       <div className="Search">
         <input
           className={styles.InputSearch}
           type="text"
-          value={value}
-          onChange={this.handleChange}
+          ref={this.tvInput}
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
-              this.handleClick();
+              this.findTv();
             }
           }}
           placeholder="Search"
@@ -41,5 +32,9 @@ class Search extends Component {
 export default Search;
 
 Search.propTypes = {
-  onSearchQueryChanged: PropTypes.func.isRequired,
+  onFindTv: PropTypes.func,
+};
+
+Search.defaultProps = {
+  onFindTv: () => { },
 };
