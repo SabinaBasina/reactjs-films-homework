@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1553161060548" clover="3.2.0">
-  <project timestamp="1553161060548" name="All files">
-    <metrics statements="137" coveredstatements="4" conditionals="325" coveredconditionals="0" methods="55" coveredmethods="1" elements="517" coveredelements="5" complexity="0" loc="137" ncloc="137" packages="5" files="10" classes="10"/>
+<coverage generated="1553762907529" clover="3.2.0">
+  <project timestamp="1553762907529" name="All files">
+    <metrics statements="138" coveredstatements="4" conditionals="325" coveredconditionals="0" methods="55" coveredmethods="1" elements="518" coveredelements="5" complexity="0" loc="138" ncloc="138" packages="5" files="10" classes="10"/>
     <package name="reactjs-films-homework">
       <metrics statements="13" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="server.js" path="C:\Users\Sabina_Basina\reactjs-films-homework\server.js">
@@ -160,7 +160,7 @@
       </file>
     </package>
     <package name="reactjs-films-homework.webpack">
-      <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="14" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="webpack.common.js" path="C:\Users\Sabina_Basina\reactjs-films-homework\webpack\webpack.common.js">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
@@ -176,12 +176,13 @@
         <line num="8" count="0" type="stmt"/>
       </file>
       <file name="webpack.prod.js" path="C:\Users\Sabina_Basina\reactjs-films-homework\webpack\webpack.prod.js">
-        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
       </file>
     </package>
   </project>
