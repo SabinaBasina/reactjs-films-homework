@@ -7,7 +7,7 @@ const webpack = require('webpack');
 
 const app = express();
 
-if (process.env.NODE_ENV.trim() === 'development') {
+if (process.env.NODE_ENV === 'development') {
   const config = require('./webpack/webpack.dev.js');
   const compiler = webpack(config);
 
