@@ -1,4 +1,4 @@
 import { hot } from 'react-hot-loader';
-import Signature from './components/Signature/Signature';
+import App from './App';
 
-export default hot(module)(Signature);
+export default hot(module)(App);

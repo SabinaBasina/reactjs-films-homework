@@ -5,4 +5,4 @@ import Root from './Root';
 
 /* global document */
 
-ReactDOM.render(<Root name="Name" />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));

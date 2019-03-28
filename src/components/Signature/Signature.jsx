@@ -26,7 +26,7 @@ Signature.propTypes = {
 };
 
 Signature.defaultProps = {
-  name: 'Name',
+  name: 'undefined',
 };
 
 export default Signature;
