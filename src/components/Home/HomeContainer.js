@@ -4,6 +4,7 @@ import Home from './Home';
 
 const mapStateToProps = createStructuredSelector({
   page: state => state.page.page,
+  tvShows: state => state.page.tvShows,
 });
 
 const mapDispatchToProps = {

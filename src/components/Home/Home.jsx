@@ -3,18 +3,9 @@ import PropTypes from 'prop-types';
 
 import styles from './Home.scss';
 import TvShowPage from '../TvShowPage';
+import Loading from './Loading.gif';
 
 class Home extends Component {
-  state = {
-    ready: false,
-  }
-
-  onReady = (isReady) => {
-    this.setState({
-      ready: isReady,
-    });
-  }
-
   increment = () => {
     const { onIncrement } = this.props;
     onIncrement();
@@ -26,18 +17,23 @@ class Home extends Component {
   }
 
   render() {
-    const { ready } = this.state;
-    const { page } = this.props;
+    const { page, tvShows } = this.props;
     return (
 
       <main>
 
-        <TvShowPage
-          onReady={this.onReady}
-          page={page}
-        />
+        <TvShowPage page={page} />
 
-        {ready
+        {!tvShows
+          && (
+            <img
+              src={Loading}
+              className={styles.Ready}
+              alt="Loading page"
+            />
+          )}
+
+        {tvShows
           && (
             <div className={styles.Pager}>
 
@@ -67,12 +63,13 @@ export default Home;
 
 Home.propTypes = {
   page: PropTypes.number,
+  tvShows: PropTypes.arrayOf(PropTypes.array).isRequired,
   onIncrement: PropTypes.func,
   onDecrement: PropTypes.func,
 };
 
 Home.defaultProps = {
-  page: 'undefined',
-  onIncrement: 'undefined',
-  onDecrement: 'undefined',
+  page: 0,
+  onIncrement: () => { },
+  onDecrement: () => { },
 };

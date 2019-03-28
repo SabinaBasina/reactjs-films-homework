@@ -3,8 +3,17 @@
 exports[`Home test 1`] = `
 <main>
   <Connect(TvShowPage)
-    onReady={[Function]}
-    page="undefined"
+    page={0}
   />
+  <div
+    className="Pager"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Next Page →
+    </button>
+  </div>
 </main>
 `;

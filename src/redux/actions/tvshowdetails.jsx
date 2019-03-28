@@ -5,10 +5,7 @@ import http from 'axios';
 
 const setTvShow = createAction('SET_TVSHOWDETAILS');
 
-export const loadTvShowsDetails = id => (dispatch) => {
-  http
-    .get(`https://api.tvmaze.com/shows/${id}`)
-    .then((response) => {
-      dispatch(setTvShow(response.data));
-    });
+export const loadTvShowsDetails = id => async (dispatch) => {
+  const response = await http.get(`https://api.tvmaze.com/shows/${id}`);
+  dispatch(setTvShow(response.data));
 };

@@ -3,33 +3,23 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './TvShowDetails.scss';
-import Loading from '../TvShowPage/Loading.gif';
+import Loading from '../Home/Loading.gif';
 import NoImage from '../TvShow/NoImage.jpg';
 import Episodes from '../Episodes/Episodes';
 
 class TvShowDetails extends Component {
-  state = {
-    isReady: true,
-  }
-
   componentDidMount() {
     const { id, loadTvShowsDetails } = this.props;
     loadTvShowsDetails(id);
   }
 
-
   render() {
-    const { isReady } = this.state;
     const { tvShow } = this.props;
-
-    if (!tvShow) {
-      return null;
-    }
 
     return (
       <div>
 
-        {!isReady
+        {!tvShow
            && (
            <img
              src={Loading}
@@ -38,7 +28,7 @@ class TvShowDetails extends Component {
            />
            )}
 
-        {isReady
+        {tvShow
 
             && (
             <div className={styles.TvShow}>

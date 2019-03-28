@@ -38,7 +38,3 @@ export default Episode;
 Episode.propTypes = {
   data: PropTypes.objectOf(PropTypes.object).isRequired,
 };
-
-// Episode.defaultProps = {
-//   data: 'undefined',
-// };
