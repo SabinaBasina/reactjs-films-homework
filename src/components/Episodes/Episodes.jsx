@@ -9,19 +9,16 @@ class Episodes extends Component {
     tvShow: [],
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { nameTvShow } = this.props;
-    http
-      .get(`https://api.tvmaze.com/singlesearch/shows?q=${nameTvShow}&embed=episodes`)
-      .then((response) => {
-        this.setState({ tvShow: response.data });
-      });
+    const response = await http.get(`https://api.tvmaze.com/singlesearch/shows?q=${nameTvShow}&embed=episodes`);
+    this.setState({ tvShow: response.data });
   }
 
   render() {
     const { tvShow } = this.state;
     return (
-      <div className="tv-show">
+      <div>
         {tvShow._embedded
           && tvShow._embedded.episodes.map(episode => <Episode data={episode} />)
         }

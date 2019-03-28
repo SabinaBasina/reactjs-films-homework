@@ -1,3 +1,5 @@
+@import '../TvShowDetails/TvShowDetails.scss';
+
 .Pager {
   text-align: center;
   margin-top: 50px;
@@ -19,10 +21,4 @@
 
 .Pager button:hover {
   color: white;
-}
-
-.Ready {
-  display: block;
-  margin: 30px auto 0 auto;
-  text-align: center;
 }
