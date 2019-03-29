@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './TvShow.scss';
-import NoImage from './NoImage.jpg';
+import NoImage from '../../images/NoImage.jpg';
 
 class TvShow extends PureComponent {
   render() {
@@ -33,9 +33,9 @@ class TvShow extends PureComponent {
 export default TvShow;
 
 TvShow.propTypes = {
-  data: PropTypes.objectOf(PropTypes.object).isRequired,
+  data: PropTypes.instanceOf(Object),
 };
 
-// TvShow.defaultProps = {
-//   data: 'undefined',
-// };
+TvShow.defaultProps = {
+  data: undefined,
+};

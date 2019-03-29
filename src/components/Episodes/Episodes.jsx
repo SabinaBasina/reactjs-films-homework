@@ -1,26 +1,30 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
-import http from 'axios';
 import PropTypes from 'prop-types';
-import Episode from '../Episode/Episode';
+import Episode from '../Episode';
 
 class Episodes extends Component {
-  state = {
-    tvShow: [],
-  };
+  componentDidMount() {
+    const { nameTvShow, loadTvShowEpisodes } = this.props;
+    loadTvShowEpisodes(nameTvShow);
+  }
 
-  async componentDidMount() {
-    const { nameTvShow } = this.props;
-    const response = await http.get(`https://api.tvmaze.com/singlesearch/shows?q=${nameTvShow}&embed=episodes`);
-    this.setState({ tvShow: response.data });
+  componentDidUpdate(prevProps) {
+    const { nameTvShow, loadTvShowEpisodes } = this.props;
+    if (nameTvShow !== prevProps.nameTvShow) {
+      loadTvShowEpisodes(nameTvShow);
+      window.scrollTo(0, 0);
+    }
   }
 
   render() {
-    const { tvShow } = this.state;
+    const { tvShowEpisodes } = this.props;
     return (
       <div>
-        {tvShow._embedded
-          && tvShow._embedded.episodes.map(episode => <Episode data={episode} />)
+        {tvShowEpisodes
+          && tvShowEpisodes._embedded.episodes.map(episode => (
+            <Episode key={episode.id} data={episode} />))
         }
       </div>
     );
@@ -31,8 +35,12 @@ export default Episodes;
 
 Episodes.propTypes = {
   nameTvShow: PropTypes.string,
+  tvShowEpisodes: PropTypes.instanceOf(Object),
+  loadTvShowEpisodes: PropTypes.func,
 };
 
 Episodes.defaultProps = {
   nameTvShow: 'undefined',
+  tvShowEpisodes: undefined,
+  loadTvShowEpisodes: () => { },
 };

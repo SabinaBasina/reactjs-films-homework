@@ -3,10 +3,8 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const AsyncAwaitPlugin = require('webpack-async-await');
 const common = require('./webpack.common.js');
 
-// const options = { };
 
 module.exports = merge.smart(common, {
 
@@ -20,7 +18,6 @@ module.exports = merge.smart(common, {
   ],
 
   plugins: [
-    // new AsyncAwaitPlugin(options),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',

@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Episode.scss';
-import NoImageEpisode from './NoImageEpisode.jpg';
+import NoImageEpisode from '../../images/NoImageEpisode.jpg';
 
 
 class Episode extends PureComponent {
@@ -36,5 +36,9 @@ class Episode extends PureComponent {
 export default Episode;
 
 Episode.propTypes = {
-  data: PropTypes.objectOf(PropTypes.object).isRequired,
+  data: PropTypes.instanceOf(Object),
+};
+
+Episode.defaultProps = {
+  data: undefined,
 };

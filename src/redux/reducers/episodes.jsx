@@ -1,9 +1,9 @@
 export default (state = { }, action) => {
   switch (action.type) {
-    case 'SET_TVSHOWDETAILS':
+    case 'SET_TVSHOWEPISODES':
       return {
         ...state,
-        tvShow: action.payload,
+        tvShowEpisodes: action.payload,
       };
     default:
       return state;

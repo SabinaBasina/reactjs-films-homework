@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Home.scss';
 import TvShowPage from '../TvShowPage';
-import Loading from './Loading.gif';
+import Loading from '../../images/Loading.gif';
 
 class Home extends Component {
   increment = () => {
@@ -63,13 +63,14 @@ export default Home;
 
 Home.propTypes = {
   page: PropTypes.number,
-  tvShows: PropTypes.arrayOf(PropTypes.array).isRequired,
+  tvShows: PropTypes.instanceOf(Object),
   onIncrement: PropTypes.func,
   onDecrement: PropTypes.func,
 };
 
 Home.defaultProps = {
   page: 0,
+  tvShows: undefined,
   onIncrement: () => { },
   onDecrement: () => { },
 };

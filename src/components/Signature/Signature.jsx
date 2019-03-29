@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 
 import './Signature.scss';
 import Home from '../Home';
-import Menu from '../Menu/Menu';
+import Menu from '../Menu';
 import TvShowDetails from '../TvShowDetails';
 import reducer from '../../redux/reducers';
 

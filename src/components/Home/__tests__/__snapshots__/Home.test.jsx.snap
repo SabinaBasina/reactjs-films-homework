@@ -5,15 +5,10 @@ exports[`Home test 1`] = `
   <Connect(TvShowPage)
     page={0}
   />
-  <div
-    className="Pager"
-  >
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      Next Page →
-    </button>
-  </div>
+  <img
+    alt="Loading page"
+    className="Ready"
+    src="test-file-stub"
+  />
 </main>
 `;

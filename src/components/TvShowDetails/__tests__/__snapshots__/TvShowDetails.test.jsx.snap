@@ -2,147 +2,30 @@
 
 exports[`test TvShowDetails test 1`] = `
 <div>
-  <div
-    className="TvShow"
-  >
-    <h1 />
-    <div
-      className="Information"
-    >
-      <img
-        alt=""
-        className="TvShowImage"
-        src="test-file-stub"
-      />
-      <div>
-        <p
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": undefined,
-            }
-          }
-        />
-        <br />
-        <b>
-          Genres:
-        </b>
-        <br />
-        <b>
-          Country:
-        </b>
-        <br />
-        <b>
-          Premiered:
-        </b>
-        <time />
-      </div>
-    </div>
-    <p
-      className="Episodes"
-    >
-      Episodes
-    </p>
-    <Episodes
-      nameTvShow="undefined"
-    />
-  </div>
+  <img
+    alt="Loading page"
+    className="Ready"
+    src="test-file-stub"
+  />
 </div>
 `;
 
 exports[`test TvShowDetails test 2 1`] = `
 <div>
-  <div
-    className="TvShow"
-  >
-    <h1 />
-    <div
-      className="Information"
-    >
-      <img
-        alt=""
-        className="TvShowImage"
-        src="test-file-stub"
-      />
-      <div>
-        <p
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": undefined,
-            }
-          }
-        />
-        <br />
-        <b>
-          Genres:
-        </b>
-        <br />
-        <b>
-          Country:
-        </b>
-        <br />
-        <b>
-          Premiered:
-        </b>
-        <time />
-      </div>
-    </div>
-    <p
-      className="Episodes"
-    >
-      Episodes
-    </p>
-    <div
-      className="tv-show"
-    />
-  </div>
+  <img
+    alt="Loading page"
+    className="Ready"
+    src="test-file-stub"
+  />
 </div>
 `;
 
 exports[`test TvShowDetails test 3 1`] = `
 <div>
-  <div
-    className="TvShow"
-  >
-    <h1 />
-    <div
-      className="Information"
-    >
-      <img
-        alt=""
-        className="TvShowImage"
-        src="test-file-stub"
-      />
-      <div>
-        <p
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": undefined,
-            }
-          }
-        />
-        <br />
-        <b>
-          Genres:
-        </b>
-        <br />
-        <b>
-          Country:
-        </b>
-        <br />
-        <b>
-          Premiered:
-        </b>
-        <time />
-      </div>
-    </div>
-    <p
-      className="Episodes"
-    >
-      Episodes
-    </p>
-    <div
-      className="tv-show"
-    />
-  </div>
+  <img
+    alt="Loading page"
+    className="Ready"
+    src="test-file-stub"
+  />
 </div>
 `;

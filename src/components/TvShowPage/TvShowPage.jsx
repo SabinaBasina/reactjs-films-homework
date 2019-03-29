@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import http from 'axios';
 import PropTypes from 'prop-types';
-import TvShow from '../TvShow/TvShow';
+
+import TvShow from '../TvShow';
 import Search from '../Search';
 import styles from './TvShowPage.scss';
 
@@ -24,6 +24,7 @@ class TvShowPage extends Component {
     if (!tvShows) {
       return null;
     }
+
     return (
 
       <main className={styles.TvShows}>
@@ -32,7 +33,7 @@ class TvShowPage extends Component {
           <Search />
           <div className={styles.TvShowLibrary}>
             {tvShows.map(tvShowData => (
-              <TvShow data={tvShowData} />
+              <TvShow key={tvShowData.id} data={tvShowData} />
             ))}
           </div>
         </div>
@@ -48,10 +49,11 @@ export default TvShowPage;
 TvShowPage.propTypes = {
   loadTvShows: PropTypes.func,
   page: PropTypes.number,
-  tvShows: PropTypes.arrayOf(PropTypes.array).isRequired,
+  tvShows: PropTypes.instanceOf(Object),
 };
 
 TvShowPage.defaultProps = {
   loadTvShows: () => { },
   page: 0,
+  tvShows: undefined,
 };

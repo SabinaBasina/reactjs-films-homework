@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './TvShowDetails.scss';
-import Loading from '../Home/Loading.gif';
-import NoImage from '../TvShow/NoImage.jpg';
-import Episodes from '../Episodes/Episodes';
+import Loading from '../../images/Loading.gif';
+import NoImage from '../../images/NoImage.jpg';
+import Episodes from '../Episodes';
 
 class TvShowDetails extends Component {
   componentDidMount() {
@@ -38,7 +38,7 @@ class TvShowDetails extends Component {
               <div className={styles.Information}>
 
                 <img
-                  src={tvShow.image === undefined ? NoImage : tvShow.image.medium}
+                  src={tvShow.image ? tvShow.image.medium : NoImage}
                   className={styles.TvShowImage}
                   alt=""
                 />
@@ -76,10 +76,11 @@ export default TvShowDetails;
 TvShowDetails.propTypes = {
   id: PropTypes.string,
   loadTvShowsDetails: PropTypes.func,
-  tvShow: PropTypes.objectOf(PropTypes.object).isRequired,
+  tvShow: PropTypes.instanceOf(Object),
 };
 
 TvShowDetails.defaultProps = {
   loadTvShowsDetails: () => { },
   id: 'undefined',
+  tvShow: undefined,
 };
