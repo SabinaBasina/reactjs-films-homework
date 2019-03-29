@@ -4,7 +4,7 @@ exports[`Signature test 1`] = `
 <main>
   <h1>
     Hello,
-    Name
+    undefined
   </h1>
   <article
     className="about"
