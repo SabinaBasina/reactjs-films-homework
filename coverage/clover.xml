@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1553866094200" clover="3.2.0">
-  <project timestamp="1553866094201" name="All files">
+<coverage generated="1553868858049" clover="3.2.0">
+  <project timestamp="1553868858050" name="All files">
     <metrics statements="140" coveredstatements="4" conditionals="325" coveredconditionals="0" methods="56" coveredmethods="1" elements="521" coveredelements="5" complexity="0" loc="140" ncloc="140" packages="5" files="11" classes="11"/>
     <package name="reactjs-films-homework">
       <metrics statements="13" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
