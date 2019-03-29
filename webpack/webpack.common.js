@@ -11,6 +11,9 @@ module.exports = {
   resolve: {
     modules: ['node_modules'],
     extensions: ['.', '.js', '.jsx'],
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
 
   module: {
@@ -24,8 +27,11 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
+        use: [
+          'react-hot-loader/webpack',
+          'babel-loader',
+        ],
       },
     ],
   },
