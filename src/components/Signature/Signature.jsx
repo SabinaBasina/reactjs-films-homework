@@ -10,7 +10,7 @@ import './Signature.scss';
 import Home from '../Home';
 import Menu from '../Menu';
 import TvShowDetails from '../TvShowDetails';
-import reducer from '../../redux/reducers';
+import reducer from '../../moduleReducers';
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 

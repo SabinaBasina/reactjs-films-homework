@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import TvShowDetails from './TvShowDetails';
-import { loadTvShowsDetails } from '../../redux/actions/tvshowdetails';
-
+import { loadTvShowsDetails } from '../../moduleActions/tvshowdetails';
+import { getTvShow } from '../../moduleSelectors';
 
 const mapStateToProps = createStructuredSelector({
-  tvShow: state => state.tvshowdetails.tvShow,
+  tvShow: getTvShow,
 });
 
 const mapDispatchToProps = {

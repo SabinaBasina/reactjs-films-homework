@@ -2,7 +2,7 @@
 import { createAction } from 'redux-actions';
 import http from 'axios';
 
-import { getValue } from '../selectors';
+import { getValue } from '../moduleSelectors';
 
 
 const setTvShows = createAction('SET_TVSHOWS');

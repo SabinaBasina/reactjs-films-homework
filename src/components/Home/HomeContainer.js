@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import Home from './Home';
+import { getPage, getTvShows } from '../../moduleSelectors';
+import { onDecrement, onIncrement } from '../../moduleActions/home';
 
 const mapStateToProps = createStructuredSelector({
-  page: state => state.page.page,
-  tvShows: state => state.page.tvShows,
+  page: getPage,
+  tvShows: getTvShows,
 });
 
 const mapDispatchToProps = {
-  onIncrement: () => ({ type: 'INCREMENT' }),
-  onDecrement: () => ({ type: 'DECREMENT' }),
+  onIncrement,
+  onDecrement,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

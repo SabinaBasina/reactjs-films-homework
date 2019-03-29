@@ -3,7 +3,6 @@
 exports[`TvShow test genres 1`] = `
 <Link
   className="TvShow"
-  replace={false}
   to="/tvShowDetails/undefined"
 >
   <br />
@@ -23,7 +22,6 @@ exports[`TvShow test genres 1`] = `
 exports[`TvShow test img is 1`] = `
 <Link
   className="TvShow"
-  replace={false}
   to="/tvShowDetails/undefined"
 >
   <br />
@@ -41,7 +39,6 @@ exports[`TvShow test img is 1`] = `
 exports[`TvShow test img no 1`] = `
 <Link
   className="TvShow"
-  replace={false}
   to="/tvShowDetails/undefined"
 >
   <br />
@@ -59,7 +56,6 @@ exports[`TvShow test img no 1`] = `
 exports[`TvShow test rating 1`] = `
 <Link
   className="TvShow"
-  replace={false}
   to="/tvShowDetails/undefined"
 >
   <br />

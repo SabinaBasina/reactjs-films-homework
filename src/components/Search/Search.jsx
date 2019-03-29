@@ -8,6 +8,7 @@ class Search extends Component {
   findTv = () => {
     const { onFindTv } = this.props;
     onFindTv(this.tvInput.current.value);
+    this.tvInput.current.value = '';
   }
 
   render() {

@@ -46,13 +46,13 @@ class TvShowDetails extends Component {
                 <div>
                   <p dangerouslySetInnerHTML={{ __html: tvShow.summary }} />
                   <br />
-                  <b>Genres:</b>
+                  <b>Genres: </b>
                   {tvShow.genres && Array.prototype.join.call(tvShow.genres, ', ')}
                   <br />
-                  <b>Country:</b>
+                  <b>Country: </b>
                   {tvShow.network && tvShow.network.country.name}
                   <br />
-                  <b>Premiered:</b>
+                  <b>Premiered: </b>
                   <time>{tvShow.premiered}</time>
                 </div>
 

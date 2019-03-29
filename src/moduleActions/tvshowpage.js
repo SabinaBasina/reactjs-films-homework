@@ -3,7 +3,7 @@
 import { createAction } from 'redux-actions';
 import http from 'axios';
 
-import { getPage } from '../selectors';
+import { getPage } from '../moduleSelectors';
 
 
 const setPage = createAction('SET_TVSHOWS');

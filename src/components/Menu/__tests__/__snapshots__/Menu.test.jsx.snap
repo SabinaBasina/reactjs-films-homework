@@ -5,7 +5,6 @@ exports[`Menu test 1`] = `
   className="Header"
 >
   <Link
-    replace={false}
     to="/"
   >
     <button
