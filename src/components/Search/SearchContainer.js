@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import Search from './Search';
-import { getSearchResult } from '../../moduleActions/search';
-import { getValue } from '../../moduleSelectors';
+import { getSearchResult } from '../../modules/moduleHome/moduleHomeActions';
+import { getValue } from '../../modules/moduleHome/moduleHomeSelectors';
 
 
 const mapStateToProps = createStructuredSelector({

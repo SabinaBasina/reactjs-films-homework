@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import Home from './Home';
-import { getPage, getTvShows } from '../../moduleSelectors';
-import { onDecrement, onIncrement } from '../../moduleActions/home';
+import { getPage, getTvShows } from '../../modules/moduleHome/moduleHomeSelectors';
+import { onDecrement, onIncrement } from '../../modules/moduleHome/moduleHomeActions';
 
 const mapStateToProps = createStructuredSelector({
   page: getPage,

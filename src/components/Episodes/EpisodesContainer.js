@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import Episodes from './Episodes';
-import { loadTvShowEpisodes } from '../../moduleActions/episodes';
-import { getTvShowEpisodes } from '../../moduleSelectors';
+import { loadTvShowEpisodes } from '../../modules/moduleDetails/moduleDetailsActions';
+import { getTvShowEpisodes } from '../../modules/moduleDetails/moduleDetailsSelectors';
 
 const mapStateToProps = createStructuredSelector({
   tvShowEpisodes: getTvShowEpisodes,

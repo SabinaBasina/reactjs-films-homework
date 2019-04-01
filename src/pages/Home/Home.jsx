@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Home.scss';
-import TvShowPage from '../TvShowPage';
+import TvShowPage from '../../components/TvShowPage';
 import Loading from '../../images/Loading.gif';
 
 class Home extends Component {

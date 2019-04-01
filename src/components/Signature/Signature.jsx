@@ -2,17 +2,12 @@
 import React, { PureComponent } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
 
 import './Signature.scss';
-import Home from '../Home';
+import Home from '../../pages/Home';
 import Menu from '../Menu';
-import TvShowDetails from '../TvShowDetails';
-import reducer from '../../moduleReducers';
-
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+import TvShowDetails from '../../pages/TvShowDetails';
+import store from '../../modules/store';
 
 class Signature extends PureComponent {
   render() {

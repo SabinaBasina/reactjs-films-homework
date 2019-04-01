@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles from './TvShowDetails.scss';
 import Loading from '../../images/Loading.gif';
 import NoImage from '../../images/NoImage.jpg';
-import Episodes from '../Episodes';
+import Episodes from '../../components/Episodes';
 
 class TvShowDetails extends Component {
   componentDidMount() {
