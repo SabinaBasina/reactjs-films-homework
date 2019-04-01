@@ -4,4 +4,4 @@
 
 # reactjs-films-homework
 
-https://dist.sabina98bel.now.sh
+https://dist-aeqey8mo4.now.sh
