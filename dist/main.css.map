@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/components/Signature/Signature.scss"],"names":[],"mappings":"AAAA;AACA,iBAAiB;;AAEjB;AACA,yCAAyC;;AAEzC;AACA,eAAe","file":"main.css","sourcesContent":["h1 {\n  color: #fc8d9f; }\n\n.glnEUElKSMGPbNbWpZJeE {\n  background-color: rgba(0, 0, 0, 0.753); }\n\n._386e6aT8UiytVEMwhK11s9 {\n  color: white; }\n"],"sourceRoot":""}
