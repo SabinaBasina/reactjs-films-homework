@@ -8,8 +8,7 @@ class Signature extends PureComponent {
     return (
       <main>
         <h1>
-          Hello,
-          {name}
+          {`Hello, ${name}`}
         </h1>
         <article className={styles.about}>
           <p className={styles.text}>
