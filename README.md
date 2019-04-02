@@ -3,5 +3,3 @@
 
 
 # reactjs-films-homework
-
-https://dist.sabina98bel.now.sh/
