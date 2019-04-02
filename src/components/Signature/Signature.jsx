@@ -13,7 +13,7 @@ class Signature extends PureComponent {
         </h1>
         <article className={styles.about}>
           <p className={styles.text}>
-            Text1
+            Text
           </p>
         </article>
       </main>
