@@ -3,8 +3,7 @@
 exports[`Signature test 1`] = `
 <main>
   <h1>
-    Hello,
-    undefined
+    Hello, undefined
   </h1>
   <article
     className="about"
@@ -12,7 +11,7 @@ exports[`Signature test 1`] = `
     <p
       className="text"
     >
-      Text1
+      Text
     </p>
   </article>
 </main>
