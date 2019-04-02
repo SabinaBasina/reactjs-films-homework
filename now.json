@@ -1,4 +1,3 @@
 {
-  "version": 2,
-  "alias": "films"
+  "alias": ["roman-test-site"]
 }
