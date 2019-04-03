@@ -22,7 +22,7 @@ class Episodes extends Component {
     const { tvShowEpisodes } = this.props;
     return (
       <div>
-        {tvShowEpisodes
+        {tvShowEpisodes && tvShowEpisodes._embedded
           && tvShowEpisodes._embedded.episodes.map(episode => (
             <Episode key={episode.id} data={episode} />))
         }

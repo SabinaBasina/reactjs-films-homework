@@ -20,7 +20,6 @@ class TvShowPage extends Component {
 
   render() {
     const { tvShows } = this.props;
-
     if (!tvShows) {
       return null;
     }

@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,18 +7,14 @@ import TvShowPage from '../../components/TvShowPage';
 import Loading from '../../images/Loading.gif';
 
 class Home extends Component {
-  increment = () => {
-    const { onIncrement } = this.props;
-    onIncrement();
-  }
-
-  decrement = () => {
-    const { onDecrement } = this.props;
-    onDecrement();
-  }
-
   render() {
-    const { page, tvShows } = this.props;
+    const {
+      page,
+      tvShows,
+      onIncrement,
+      onDecrement,
+    } = this.props;
+
     return (
 
       <main>
@@ -39,13 +36,13 @@ class Home extends Component {
 
               {page > 0
                 && (
-                  <button type="button" onClick={e => this.decrement(e)}>
+                  <button type="button" onClick={e => onDecrement(e)}>
                     &larr; Previous Page
                   </button>
                 )
               }
 
-              <button type="button" onClick={e => this.increment(e)}>
+              <button type="button" onClick={e => onIncrement(e)}>
                 Next Page &rarr;
               </button>
 

@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Episodes test 1`] = `<div />`;
+exports[`test Episodes test 1 1`] = `
+<div>
+  <Episode
+    data={
+      Object {
+        "id": 1,
+      }
+    }
+  />
+  <Episode
+    data={
+      Object {
+        "id": 2,
+      }
+    }
+  />
+</div>
+`;
 
 exports[`test Episodes test 2 1`] = `<div />`;

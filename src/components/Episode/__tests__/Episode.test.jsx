@@ -2,8 +2,6 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Episode from '../Episode';
 
-/* global test, expect */
-
 test('Episode test img is', () => {
   const renderer = new ShallowRenderer();
   renderer.render(<Episode data={{ image: { medium: 'medium' } }} />);

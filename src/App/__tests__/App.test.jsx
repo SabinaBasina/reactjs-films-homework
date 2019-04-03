@@ -1,10 +1,11 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import Search from '../Search';
 
-test('Search test', () => {
+import App from '../App';
+
+test('App test', () => {
   const renderer = new ShallowRenderer();
-  renderer.render(<Search />);
+  renderer.render(<App />);
   const result = renderer.getRenderOutput();
 
   expect(result).toMatchSnapshot();

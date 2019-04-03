@@ -1,8 +1,7 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import Menu from '../Menu';
 
-/* global test, expect */
+import Menu from '../Menu';
 
 test('Menu test', () => {
   const renderer = new ShallowRenderer();
