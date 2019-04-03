@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "build": "webpack --config webpack/webpack.prod.js",
     "start": "cross-env NODE_ENV=development node server.js ",
     "prod": "cross-env NODE_ENV=production npm run build && node server.js",
