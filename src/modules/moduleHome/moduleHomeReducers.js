@@ -1,15 +1,9 @@
 const initialState = {
-  value: '',
   page: 0,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'FIND_TV':
-      return {
-        ...state,
-        value: action.payload,
-      };
     case 'SET_TVSHOWS':
       return {
         ...state,

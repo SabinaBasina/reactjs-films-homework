@@ -3,15 +3,13 @@
 import { createAction } from 'redux-actions';
 import http from 'axios';
 
-import { getValue, getPage } from './moduleHomeSelectors';
+import { getPage } from './moduleHomeSelectors';
 
 
 const setTvShows = createAction('SET_TVSHOWS');
-const setPage = createAction('SET_TVSHOWS');
 
-export const getSearchResult = () => async (dispatch, getState) => {
-  const value = getValue(getState());
-  const response = await http.get(`https://api.tvmaze.com/search/shows?q=${value}`);
+export const getSearchResult = searchValue => async (dispatch) => {
+  const response = await http.get(`https://api.tvmaze.com/search/shows?q=${searchValue}`);
   dispatch(setTvShows(response.data.map(data => data.show)));
 };
 
@@ -19,7 +17,7 @@ export const loadTvShows = () => async (dispatch, getState) => {
   const page = getPage(getState());
   const response = await http.get(`https://api.tvmaze.com/shows?page=${page}`);
   window.scrollTo(0, 0);
-  dispatch(setPage(response.data));
+  dispatch(setTvShows(response.data));
 };
 
 export const onIncrement = () => ({ type: 'INCREMENT' });

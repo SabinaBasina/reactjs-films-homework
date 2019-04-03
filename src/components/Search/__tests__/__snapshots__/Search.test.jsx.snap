@@ -6,9 +6,20 @@ exports[`Search test 1`] = `
 >
   <input
     className="InputSearch"
+    onChange={[Function]}
     onKeyPress={[Function]}
     placeholder="Search"
     type="text"
+    value=""
   />
+  <Link
+    to="/search/"
+  >
+    <button
+      type="button"
+    >
+      findTv
+    </button>
+  </Link>
 </div>
 `;

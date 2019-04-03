@@ -7,14 +7,27 @@ import styles from './TvShowPage.scss';
 
 class TvShowPage extends Component {
   componentDidMount() {
-    const { loadTvShows } = this.props;
-    loadTvShows();
+    const { loadTvShows, searchValue, getSearchResult } = this.props;
+    if (searchValue) {
+      getSearchResult(searchValue);
+    } else {
+      loadTvShows();
+    }
   }
 
   componentDidUpdate(prevProps) {
-    const { page, loadTvShows, tvShows } = this.props;
-    if ((page !== prevProps.page) && tvShows) {
+    const {
+      page,
+      loadTvShows,
+      searchValue,
+      getSearchResult,
+    } = this.props;
+
+    if (page !== prevProps.page) {
       loadTvShows();
+    }
+    if (searchValue !== prevProps.searchValue) {
+      getSearchResult(searchValue);
     }
   }
 
@@ -47,12 +60,16 @@ export default TvShowPage;
 
 TvShowPage.propTypes = {
   loadTvShows: PropTypes.func,
+  getSearchResult: PropTypes.func,
   page: PropTypes.number,
+  searchValue: PropTypes.string,
   tvShows: PropTypes.instanceOf(Object),
 };
 
 TvShowPage.defaultProps = {
   loadTvShows: () => { },
+  getSearchResult: () => { },
   page: 0,
+  searchValue: null,
   tvShows: undefined,
 };

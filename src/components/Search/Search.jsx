@@ -1,42 +1,43 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './Search.scss';
 
 class Search extends Component {
-  tvInput = React.createRef();
+  state = {
+    searchValue: '',
+  }
 
-  findTv = () => {
-    const { onFindTv } = this.props;
-    onFindTv(this.tvInput.current.value);
-    this.tvInput.current.value = '';
+
+  handleChange = (e) => {
+    this.setState({ searchValue: e.target.value });
   }
 
   render() {
+    const { searchValue } = this.state;
     return (
       <div className="Search">
         <input
           className={styles.InputSearch}
           type="text"
-          ref={this.tvInput}
+          value={searchValue}
+          onChange={this.handleChange}
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
-              this.findTv();
+              // this.findTv();
             }
           }}
           placeholder="Search"
         />
+
+        <Link to={`/search/${searchValue}`}>
+          <button type="button" onClick={this.findTv}>
+            findTv
+          </button>
+        </Link>
       </div>
     );
   }
 }
 
 export default Search;
-
-Search.propTypes = {
-  onFindTv: PropTypes.func,
-};
-
-Search.defaultProps = {
-  onFindTv: () => { },
-};
