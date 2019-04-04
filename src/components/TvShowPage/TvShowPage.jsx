@@ -44,9 +44,7 @@ class TvShowPage extends Component {
     }
 
     return (
-
       <main className={styles.TvShows}>
-
         <div>
           <Search />
           <div className={styles.TvShowLibrary}>
@@ -55,9 +53,7 @@ class TvShowPage extends Component {
             ))}
           </div>
         </div>
-
       </main>
-
     );
   }
 }

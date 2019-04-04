@@ -1,4 +1,10 @@
-export default (state = { }, action) => {
+const initialState = {
+  isReady: false,
+  tvShowEpisodes: { },
+  tvShow: { },
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'SET_TVSHOWEPISODES':
       return {

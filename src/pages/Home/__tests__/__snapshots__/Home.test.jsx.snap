@@ -1,6 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home test 1`] = `
+exports[`test Episode test tvShows no 1`] = `
+<main>
+  <Connect(TvShowPage)
+    page={0}
+  />
+  <div
+    className="Pager"
+  >
+    <Link
+      to="/page/1"
+    >
+      <button
+        type="button"
+      >
+        Next Page →
+      </button>
+    </Link>
+  </div>
+</main>
+`;
+
+exports[`test Episode test tvShows no 2`] = `
+<main>
+  <Connect(TvShowPage)
+    page={1}
+  />
+  <img
+    alt="Loading page"
+    className="Ready"
+    src="test-file-stub"
+  />
+</main>
+`;
+
+exports[`test Home test 1`] = `
 <main>
   <Connect(TvShowPage)
     page={0}

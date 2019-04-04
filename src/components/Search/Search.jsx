@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -17,7 +19,9 @@ class Search extends Component {
     const { history } = this.props;
     return (
       <div>
+        <label htmlFor="search" />
         <input
+          id="search"
           className={styles.InputSearch}
           type="text"
           value={searchValue}

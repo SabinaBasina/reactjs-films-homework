@@ -1,14 +1,11 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Renderer from 'react-test-renderer';
-import moxios from 'moxios';
+
 import TvShowDetails from '../TvShowDetails';
 
 describe('test', () => {
-  beforeEach(() => moxios.install());
-  afterEach(() => moxios.uninstall());
-
-  it('TvShowDetails test', () => {
+  it('TvShowDetails test 1', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<TvShowDetails />);
     const result = renderer.getRenderOutput();
@@ -16,41 +13,37 @@ describe('test', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('TvShowDetails test 2', (done) => {
-    const tvShow = {
-      image: {
-        medium: [1, 2],
-      },
-    };
-    const isReady = true;
-    moxios.stubRequest('https://api.tvmaze.com/shows/id', {
-      status: 200,
-      response: { tvShow, isReady },
-    });
-
-    const renderer = Renderer.create(<TvShowDetails id="id" />);
-
-    return moxios.wait(() => {
-      const testInstance = renderer.toJSON();
-      expect(testInstance).toMatchSnapshot();
-      done();
-    });
+  it('TvShowDetails test 2', () => {
+    const renderer = Renderer.create(<TvShowDetails id="1" />);
+    const testInstance = renderer.toJSON();
+    expect(testInstance).toMatchSnapshot();
   });
 
-  it('TvShowDetails test 3', (done) => {
-    const tvShow = { };
-    const isReady = true;
-    moxios.stubRequest('https://api.tvmaze.com/shows/id', {
-      status: 200,
-      response: { tvShow, isReady },
-    });
+  test('Episode test img is', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(<TvShowDetails tvShow={{ image: { medium: 'medium' } }} />);
+    const result = renderer.getRenderOutput();
+    expect(result).toMatchSnapshot();
+  });
 
-    const renderer = Renderer.create(<TvShowDetails id="id" />);
+  test('Episode test img no', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(<TvShowDetails tvShow={{ }} />);
+    const result = renderer.getRenderOutput();
+    expect(result).toMatchSnapshot();
+  });
 
-    return moxios.wait(() => {
-      const testInstance = renderer.toJSON();
-      expect(testInstance).toMatchSnapshot();
-      done();
-    });
+  test('Episode test genres is', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(<TvShowDetails tvShow={{ genres: 'genres' }} />);
+    const result = renderer.getRenderOutput();
+    expect(result).toMatchSnapshot();
+  });
+
+  test('Episode test country is', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(<TvShowDetails tvShow={{ network: { country: { name: 'name' } } }} />);
+    const result = renderer.getRenderOutput();
+    expect(result).toMatchSnapshot();
   });
 });

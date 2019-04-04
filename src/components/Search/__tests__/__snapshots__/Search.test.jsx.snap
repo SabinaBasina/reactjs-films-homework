@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search test 1`] = `
+exports[`test Search test 2 1`] = `
 <div>
+  <label
+    htmlFor="search"
+  />
   <input
     className="InputSearch"
+    id="search"
     onChange={[Function]}
     onKeyPress={[Function]}
     placeholder="Search"
