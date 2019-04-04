@@ -2,7 +2,7 @@ import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router';
 
-import Signature from '../Signature';
+import Routes from '../Routes';
 import TvShowDetails from '../../../pages/TvShowDetails';
 import TvShowPage from '../../TvShowPage';
 
@@ -16,7 +16,7 @@ describe('1', () => {
   test('renders 1', () => {
     const component = TestRenderer.create(
       <MemoryRouter initialEntries={['/']} initialIndex={0}>
-        <Signature />
+        <Routes />
       </MemoryRouter>,
     );
     expect(component).toMatchSnapshot();
@@ -25,7 +25,7 @@ describe('1', () => {
   test('renders 2', () => {
     const component = TestRenderer.create(
       <MemoryRouter initialEntries={['/tvShowDetails/1']} initialIndex={0}>
-        <Signature />
+        <Routes />
       </MemoryRouter>,
     );
     expect(component).toMatchSnapshot();
@@ -35,7 +35,7 @@ describe('1', () => {
   test('renders 3', () => {
     const component = TestRenderer.create(
       <MemoryRouter initialEntries={['/search/a']} initialIndex={0}>
-        <Signature />
+        <Routes />
       </MemoryRouter>,
     );
     expect(component).toMatchSnapshot();

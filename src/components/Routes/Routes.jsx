@@ -13,6 +13,10 @@ class Routes extends PureComponent {
       <Fragment>
         <Route path="/" exact component={Home} />
         <Route
+          path="/page/:pageNumber"
+          render={props => <Home pageNumber={props.match.params.pageNumber} />}
+        />
+        <Route
           path="/search/:searchValue"
           render={props => <TvShowPage searchValue={props.match.params.searchValue} />}
         />

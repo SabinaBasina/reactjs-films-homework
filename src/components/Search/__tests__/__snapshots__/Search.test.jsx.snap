@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search test 1`] = `
-<div
-  className="Search"
->
+<div>
   <input
     className="InputSearch"
     onChange={[Function]}
@@ -12,14 +10,5 @@ exports[`Search test 1`] = `
     type="text"
     value=""
   />
-  <Link
-    to="/search/"
-  >
-    <button
-      type="button"
-    >
-      findTv
-    </button>
-  </Link>
 </div>
 `;

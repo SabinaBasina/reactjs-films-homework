@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './Home.scss';
 import TvShowPage from '../../components/TvShowPage';
@@ -8,18 +9,13 @@ import Loading from '../../images/Loading.gif';
 
 class Home extends Component {
   render() {
-    const {
-      page,
-      tvShows,
-      onIncrement,
-      onDecrement,
-    } = this.props;
+    const { tvShows, pageNumber } = this.props;
 
     return (
 
       <main>
 
-        <TvShowPage page={page} />
+        <TvShowPage page={Number(pageNumber)} />
 
         {!tvShows
           && (
@@ -34,17 +30,21 @@ class Home extends Component {
           && (
             <div className={styles.Pager}>
 
-              {page > 0
+              {Number(pageNumber) > 0
                 && (
-                  <button type="button" onClick={e => onDecrement(e)}>
-                    &larr; Previous Page
-                  </button>
+                  <Link to={(Number(pageNumber) - 1 === 0) ? '/' : `/page/${Number(pageNumber) - 1}`}>
+                    <button type="button">
+                      &larr; Previous Page
+                    </button>
+                  </Link>
                 )
               }
 
-              <button type="button" onClick={e => onIncrement(e)}>
-                Next Page &rarr;
-              </button>
+              <Link to={`/page/${Number(pageNumber) + 1}`}>
+                <button type="button">
+                  Next Page &rarr;
+                </button>
+              </Link>
 
             </div>
           )}
@@ -59,15 +59,11 @@ class Home extends Component {
 export default Home;
 
 Home.propTypes = {
-  page: PropTypes.number,
   tvShows: PropTypes.instanceOf(Object),
-  onIncrement: PropTypes.func,
-  onDecrement: PropTypes.func,
+  pageNumber: PropTypes.string,
 };
 
 Home.defaultProps = {
-  page: 0,
   tvShows: undefined,
-  onIncrement: () => { },
-  onDecrement: () => { },
+  pageNumber: '0',
 };

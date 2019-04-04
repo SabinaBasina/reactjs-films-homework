@@ -13,7 +13,8 @@ exports[`App test 1`] = `
   }
 >
   <BrowserRouter>
-    <Signature />
+    <Menu />
+    <Routes />
   </BrowserRouter>
 </Provider>
 `;
