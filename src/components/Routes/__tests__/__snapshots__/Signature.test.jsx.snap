@@ -39,3 +39,23 @@ Array [
   "TvShowDetails",
 ]
 `;
+
+exports[`1 renders 3 1`] = `
+Array [
+  <header
+    className="Header"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <button
+        type="button"
+      >
+        TvShows
+      </button>
+    </a>
+  </header>,
+  "TvShowPage",
+]
+`;

@@ -29,7 +29,6 @@ class TvShowDetails extends Component {
            )}
 
         {tvShow
-
             && (
             <div className={styles.TvShow}>
 
