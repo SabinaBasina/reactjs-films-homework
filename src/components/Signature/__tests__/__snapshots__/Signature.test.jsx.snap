@@ -3,7 +3,7 @@
 exports[`Signature test 1`] = `
 <main>
   <h1>
-    Hello, undefined
+    undefined
   </h1>
   <article
     className="about"
@@ -11,7 +11,11 @@ exports[`Signature test 1`] = `
     <p
       className="text"
     >
-      Text
+      <a
+        href="https://github.com/SabinaBasina/"
+      >
+        link to GitHub
+      </a>
     </p>
   </article>
 </main>

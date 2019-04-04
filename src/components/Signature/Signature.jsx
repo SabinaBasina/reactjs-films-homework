@@ -8,11 +8,11 @@ class Signature extends PureComponent {
     return (
       <main>
         <h1>
-          {`Hello, ${name}`}
+          {name}
         </h1>
         <article className={styles.about}>
           <p className={styles.text}>
-            Text
+            <a href="https://github.com/SabinaBasina/">link to GitHub</a>
           </p>
         </article>
       </main>

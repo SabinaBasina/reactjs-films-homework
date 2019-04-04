@@ -1,5 +1,9 @@
 $bg-color: rgb(252, 141, 159);
 
+* {
+  text-align: center;
+}
+
 h1 {
   color: $bg-color;
 }
@@ -8,6 +12,8 @@ h1 {
   background-color: rgba(0, 0, 0, 0.753);
 }
 
-.text {
+.text a {
   color: white;
+  font-size: 18px;
+  text-decoration: none;
 }
