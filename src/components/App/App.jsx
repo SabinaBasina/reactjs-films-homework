@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Signature from '../components/Signature/Signature';
+import Signature from '../Signature';
 
 const App = () => (
   <Signature name="Sabina Basina" />
