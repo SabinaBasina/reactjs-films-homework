@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './Search.scss';
 
@@ -8,15 +8,15 @@ class Search extends Component {
     searchValue: '',
   }
 
-
   handleChange = (e) => {
     this.setState({ searchValue: e.target.value });
   }
 
   render() {
     const { searchValue } = this.state;
+    const { history } = this.props;
     return (
-      <div className="Search">
+      <div>
         <input
           className={styles.InputSearch}
           type="text"
@@ -24,20 +24,22 @@ class Search extends Component {
           onChange={this.handleChange}
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
-              // this.findTv();
+              history.push(`/search/${e.target.value}`);
             }
           }}
           placeholder="Search"
         />
-
-        <Link to={`/search/${searchValue}`}>
-          <button type="button" onClick={this.findTv}>
-            findTv
-          </button>
-        </Link>
       </div>
     );
   }
 }
 
 export default Search;
+
+Search.propTypes = {
+  history: PropTypes.instanceOf(Object),
+};
+
+Search.defaultProps = {
+  history: undefined,
+};

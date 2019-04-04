@@ -2,17 +2,15 @@
 import React, { PureComponent, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 
-import './Signature.scss';
+import './Routes.scss';
 import Home from '../../pages/Home';
-import Menu from '../Menu';
 import TvShowDetails from '../../pages/TvShowDetails';
 import TvShowPage from '../TvShowPage';
 
-class Signature extends PureComponent {
+class Routes extends PureComponent {
   render() {
     return (
       <Fragment>
-        <Menu />
         <Route path="/" exact component={Home} />
         <Route
           path="/search/:searchValue"
@@ -27,4 +25,4 @@ class Signature extends PureComponent {
   }
 }
 
-export default Signature;
+export default Routes;
