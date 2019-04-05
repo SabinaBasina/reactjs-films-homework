@@ -6,6 +6,7 @@ exports[`test Search test 2 1`] = `
     htmlFor="search"
   />
   <input
+    autoComplete="off"
     className="InputSearch"
     id="search"
     onChange={[Function]}
