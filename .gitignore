@@ -1,8 +1,8 @@
 .idea
-node_modules/
+node_modules
 
 # compiled output
-/dist
+dist
 
 # Ignore test-related files
-/coverage/*
+coverage
