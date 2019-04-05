@@ -9,7 +9,7 @@ import Loading from '../../images/Loading.gif';
 
 class Home extends Component {
   render() {
-    const { tvShows, pageNumber } = this.props;
+    const { isReadyTvShows, pageNumber } = this.props;
 
     return (
 
@@ -17,7 +17,7 @@ class Home extends Component {
 
         <TvShowPage page={Number(pageNumber)} />
 
-        {!tvShows
+        {isReadyTvShows === false
           && (
             <img
               src={Loading}
@@ -26,11 +26,11 @@ class Home extends Component {
             />
           )}
 
-        {tvShows
+        {isReadyTvShows
           && (
             <div className={styles.Pager}>
 
-              {Number(pageNumber) > 0
+              {pageNumber > 0
                 && (
                   <Link to={`/page/${Number(pageNumber) - 1}`}>
                     <button type="button">
@@ -59,11 +59,11 @@ class Home extends Component {
 export default Home;
 
 Home.propTypes = {
-  tvShows: PropTypes.instanceOf(Object),
+  isReadyTvShows: PropTypes.bool,
   pageNumber: PropTypes.string,
 };
 
 Home.defaultProps = {
-  tvShows: undefined,
+  isReadyTvShows: false,
   pageNumber: '0',
 };

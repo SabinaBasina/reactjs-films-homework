@@ -1,8 +1,6 @@
 const initialState = {
   isReadyTvShow: false,
   isReadyEpisodes: false,
-  tvShowEpisodes: { },
-  tvShow: { },
 };
 
 export default (state = initialState, action) => {

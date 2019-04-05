@@ -19,11 +19,7 @@ class Episodes extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { nameTvShow, loadTvShowEpisodes, isReadyEpisodes } = this.props;
-    if (nameTvShow !== prevProps.nameTvShow) {
-      loadTvShowEpisodes(nameTvShow);
-      window.scrollTo(0, 0);
-    }
+    const { isReadyEpisodes } = this.props;
     if (isReadyEpisodes !== prevProps.isReadyEpisodes) {
       this.onReady(isReadyEpisodes);
     }

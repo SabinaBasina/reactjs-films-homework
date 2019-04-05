@@ -21,6 +21,7 @@ class Search extends Component {
       <div>
         <label htmlFor="search" />
         <input
+          autoComplete="off"
           id="search"
           className={styles.InputSearch}
           type="text"

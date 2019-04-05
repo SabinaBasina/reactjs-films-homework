@@ -6,12 +6,17 @@ import Search from '../Search';
 import styles from './TvShowPage.scss';
 
 class TvShowPage extends Component {
+  state = {
+    readyTvShows: false,
+  }
+
   componentDidMount() {
     const {
       page,
       loadTvShows,
       searchValue,
       getSearchResult,
+      isReadyTvShows,
     } = this.props;
 
     if (searchValue) {
@@ -19,6 +24,7 @@ class TvShowPage extends Component {
     } else {
       loadTvShows(page);
     }
+    this.onReady(isReadyTvShows);
   }
 
   componentDidUpdate(prevProps) {
@@ -27,6 +33,7 @@ class TvShowPage extends Component {
       loadTvShows,
       searchValue,
       getSearchResult,
+      isReadyTvShows,
     } = this.props;
 
     if (page !== prevProps.page) {
@@ -35,24 +42,38 @@ class TvShowPage extends Component {
     if (searchValue !== prevProps.searchValue) {
       getSearchResult(searchValue);
     }
+    if (isReadyTvShows !== prevProps.isReadyTvShows) {
+      this.onReady(isReadyTvShows);
+    }
+  }
+
+  onReady = (newIsReady) => {
+    this.setState({ readyTvShows: newIsReady });
   }
 
   render() {
     const { tvShows } = this.props;
+    const { readyTvShows } = this.state;
+
     if (!tvShows) {
       return null;
     }
 
     return (
       <main className={styles.TvShows}>
-        <div>
-          <Search />
-          <div className={styles.TvShowLibrary}>
-            {tvShows.map(tvShowData => (
-              <TvShow key={tvShowData.id} data={tvShowData} />
-            ))}
-          </div>
-        </div>
+
+        {readyTvShows
+            && (
+            <div>
+              <Search />
+              <div className={styles.TvShowLibrary}>
+                {tvShows.map(tvShowData => (
+                  <TvShow key={tvShowData.id} data={tvShowData} />
+                ))}
+              </div>
+            </div>
+            )}
+
       </main>
     );
   }
@@ -66,6 +87,7 @@ TvShowPage.propTypes = {
   page: PropTypes.number,
   searchValue: PropTypes.string,
   tvShows: PropTypes.instanceOf(Object),
+  isReadyTvShows: PropTypes.bool,
 };
 
 TvShowPage.defaultProps = {
@@ -74,4 +96,5 @@ TvShowPage.defaultProps = {
   page: 0,
   searchValue: null,
   tvShows: undefined,
+  isReadyTvShows: false,
 };

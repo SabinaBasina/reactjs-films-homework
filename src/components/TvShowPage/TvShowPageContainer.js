@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 
 import TvShowPage from './TvShowPage';
 import { loadTvShows, getSearchResult } from '../../modules/moduleHome/moduleHomeActions';
-import { getTvShows } from '../../modules/moduleHome/moduleHomeSelectors';
+import { getTvShows, getIsReadyTvShows } from '../../modules/moduleHome/moduleHomeSelectors';
 
 const mapStateToProps = createStructuredSelector({
   tvShows: getTvShows,
+  isReadyTvShows: getIsReadyTvShows,
 });
 
 const mapDispatchToProps = {

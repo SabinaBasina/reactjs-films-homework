@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import Home from './Home';
-import { getTvShows } from '../../modules/moduleHome/moduleHomeSelectors';
+import { getIsReadyTvShows } from '../../modules/moduleHome/moduleHomeSelectors';
 
 const mapStateToProps = createStructuredSelector({
-  tvShows: getTvShows,
+  isReadyTvShows: getIsReadyTvShows,
 });
 
 export default connect(mapStateToProps)(Home);
