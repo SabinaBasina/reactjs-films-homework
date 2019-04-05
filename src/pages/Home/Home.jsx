@@ -47,7 +47,8 @@ class Home extends Component {
               </Link>
 
             </div>
-          )}
+          )
+        }
 
 
       </main>

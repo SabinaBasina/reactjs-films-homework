@@ -21,35 +21,13 @@ describe('test', () => {
     expect(testInstance).toMatchSnapshot();
   });
 
-  // it('Episodes componentDidUpdate: should not load tv show episodes', () => {
-  //   const loadTvShowEpisodes = jest.fn();
-  //   Episodes.prototype.componentDidUpdate.call(
-  //     { props: { nameTvShow: 'nameTvShow_1', loadTvShowEpisodes } },
-  //     { nameTvShow: 'nameTvShow_1' },
-  //   );
-  //   expect(loadTvShowEpisodes).toHaveBeenCalledTimes(0);
-  // });
-
-  // it('Episodes componentDidUpdate: should load tv show episodes', () => {
-  //   const loadTvShowEpisodes = jest.fn();
-  //   const scrollTo = jest.fn();
-  //   // eslint-disable-next-line no-undef
-  //   window.scrollTo = scrollTo;
-  //   Episodes.prototype.componentDidUpdate.call(
-  //     { props: { nameTvShow: 'nameTvShow_1', loadTvShowEpisodes } },
-  //     { nameTvShow: 'nameTvShow_2' },
-  //   );
-  //   expect(loadTvShowEpisodes).toHaveBeenCalledTimes(1);
-  //   expect(scrollTo).toHaveBeenCalledTimes(1);
-  // });
-
   // it('Episodes componentDidUpdate: should not onReady', () => {
-  //   const onReady = jest.fn();
+  //   // const onReady = jest.fn();
   //   Episodes.prototype.componentDidUpdate.call(
   //     { props: { isReadyEpisodes: true } },
-  //     { isReadyEpisodes: true, onReady },
+  //     { isReadyEpisodes: true },
   //   );
-  //   expect(onReady).toHaveBeenCalledTimes(0);
+  //   expect(Episodes.prototype.componentDidUpdate.calledOnce).to.equal(false);
   // });
 
   // it('Episodes componentDidUpdate: should onReady', () => {
@@ -58,6 +36,6 @@ describe('test', () => {
   //     { props: { isReadyEpisodes: true } },
   //     { isReadyEpisodes: false, onReady },
   //   );
-  //   expect(onReady).toHaveBeenCalledTimes(1);
+  //   expect(Episodes.prototype.componentDidUpdate.calledOnce).to.equal(true);
   // });
 });

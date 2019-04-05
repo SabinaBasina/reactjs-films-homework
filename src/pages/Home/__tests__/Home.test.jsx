@@ -19,9 +19,17 @@ describe('test', () => {
     expect(result).toMatchSnapshot();
   });
 
-  test('Episode test tvShows no', () => {
+  test('Episode test pageNumber is', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<Home pageNumber="1" />);
+    const result = renderer.getRenderOutput();
+    // expect(pageNumber).toBe(true);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('Episode test isReadyTvShows is', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(<Home isReadyTvShows />);
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();
   });

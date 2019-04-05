@@ -43,7 +43,7 @@ class Episodes extends Component {
           />
           )}
 
-        {readyEpisodes === true
+        {readyEpisodes
           && (
           <div>
             {tvShowEpisodes && tvShowEpisodes._embedded
