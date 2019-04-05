@@ -3,10 +3,11 @@ import { createStructuredSelector } from 'reselect';
 
 import Episodes from './Episodes';
 import { loadTvShowEpisodes } from '../../modules/moduleDetails/moduleDetailsActions';
-import { getTvShowEpisodes } from '../../modules/moduleDetails/moduleDetailsSelectors';
+import { getTvShowEpisodes, getIsReadyEpisodes } from '../../modules/moduleDetails/moduleDetailsSelectors';
 
 const mapStateToProps = createStructuredSelector({
   tvShowEpisodes: getTvShowEpisodes,
+  isReadyEpisodes: getIsReadyEpisodes,
 });
 
 const mapDispatchToProps = {

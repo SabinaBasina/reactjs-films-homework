@@ -8,27 +8,43 @@ import NoImage from '../../images/NoImage.jpg';
 import Episodes from '../../components/Episodes';
 
 class TvShowDetails extends Component {
+  state = {
+    readyTvShow: false,
+  }
+
   componentDidMount() {
-    const { id, loadTvShowsDetails } = this.props;
+    const { id, loadTvShowsDetails, isReadyTvShow } = this.props;
     loadTvShowsDetails(id);
+    this.onReady(isReadyTvShow);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { isReadyTvShow } = this.props;
+    if (isReadyTvShow !== prevProps.isReadyTvShow) {
+      this.onReady(isReadyTvShow);
+    }
+  }
+
+  onReady = (newIsReady) => {
+    this.setState({ readyTvShow: newIsReady });
   }
 
   render() {
     const { tvShow } = this.props;
-
+    const { readyTvShow } = this.state;
     return (
       <div>
 
-        {!tvShow
+        {readyTvShow === false
            && (
            <img
              src={Loading}
              className={styles.Ready}
-             alt="Loading page"
+             alt="Loading TvShow"
            />
            )}
 
-        {tvShow
+        {readyTvShow === true
             && (
             <div className={styles.TvShow}>
 
@@ -75,11 +91,13 @@ export default TvShowDetails;
 TvShowDetails.propTypes = {
   id: PropTypes.string,
   loadTvShowsDetails: PropTypes.func,
+  isReadyTvShow: PropTypes.bool,
   tvShow: PropTypes.instanceOf(Object),
 };
 
 TvShowDetails.defaultProps = {
   loadTvShowsDetails: () => { },
   id: 'undefined',
+  isReadyTvShow: false,
   tvShow: undefined,
 };

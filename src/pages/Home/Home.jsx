@@ -32,7 +32,7 @@ class Home extends Component {
 
               {Number(pageNumber) > 0
                 && (
-                  <Link to={(Number(pageNumber) - 1 === 0) ? '/' : `/page/${Number(pageNumber) - 1}`}>
+                  <Link to={`/page/${Number(pageNumber) - 1}`}>
                     <button type="button">
                       &larr; Previous Page
                     </button>

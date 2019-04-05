@@ -42,4 +42,22 @@ describe('test', () => {
     expect(loadTvShowEpisodes).toHaveBeenCalledTimes(1);
     expect(scrollTo).toHaveBeenCalledTimes(1);
   });
+
+  // it('Episodes componentDidUpdate: should not onReady', () => {
+  //   const onReady = jest.fn();
+  //   Episodes.prototype.componentDidUpdate.call(
+  //     { props: { isReadyEpisodes: true } },
+  //     { isReadyEpisodes: true, onReady },
+  //   );
+  //   expect(onReady).toHaveBeenCalledTimes(0);
+  // });
+
+  // it('Episodes componentDidUpdate: should onReady', () => {
+  //   const onReady = jest.fn();
+  //   Episodes.prototype.componentDidUpdate.call(
+  //     { props: { isReadyEpisodes: true } },
+  //     { isReadyEpisodes: false, onReady },
+  //   );
+  //   expect(onReady).toHaveBeenCalledTimes(1);
+  // });
 });

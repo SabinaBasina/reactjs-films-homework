@@ -46,4 +46,22 @@ describe('test', () => {
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();
   });
+
+  // it('TvShowDetails componentDidUpdate: should not onReady', () => {
+  //   const onReady = jest.fn();
+  //   TvShowDetails.prototype.componentDidUpdate.call(
+  //     { props: { isReadyTvShow: true } },
+  //     { isReadyTvShow: true, onReady },
+  //   );
+  //   expect(onReady).toHaveBeenCalledTimes(0);
+  // });
+
+  // it('TvShowDetails componentDidUpdate: should onReady', () => {
+  //   const onReady = jest.fn();
+  //   TvShowDetails.prototype.componentDidUpdate.call(
+  //     { props: { isReadyTvShow: true } },
+  //     { isReadyTvShow: false, onReady },
+  //   );
+  //   expect(onReady).toHaveBeenCalledTimes(1);
+  // });
 });

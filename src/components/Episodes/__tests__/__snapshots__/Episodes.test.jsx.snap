@@ -2,21 +2,20 @@
 
 exports[`test Episodes test 1 1`] = `
 <div>
-  <Episode
-    data={
-      Object {
-        "id": 1,
-      }
-    }
-  />
-  <Episode
-    data={
-      Object {
-        "id": 2,
-      }
-    }
+  <img
+    alt="Loading Episodes"
+    className="Ready"
+    src="test-file-stub"
   />
 </div>
 `;
 
-exports[`test Episodes test 2 1`] = `<div />`;
+exports[`test Episodes test 2 1`] = `
+<div>
+  <img
+    alt="Loading Episodes"
+    className="Ready"
+    src="test-file-stub"
+  />
+</div>
+`;
