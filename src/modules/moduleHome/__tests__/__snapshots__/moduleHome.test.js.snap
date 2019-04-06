@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducers should handle IS_READY_TVSHOWS 1`] = `
+Object {
+  "isReadyTvShows": undefined,
+}
+`;
+
+exports[`reducers should handle SET_TVSHOWS 1`] = `
+Object {
+  "tvShows": undefined,
+}
+`;
+
+exports[`reducers should return the initial state 1`] = `
+Object {
+  "isReadyTvShows": false,
+}
+`;
