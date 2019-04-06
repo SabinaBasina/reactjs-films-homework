@@ -7,7 +7,7 @@ import TvShowPage from '../TvShowPage';
 describe('test', () => {
   test('TvShowPage test 1', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<TvShowPage tvShows={[{ id: 1 }, { id: 2 }]} />);
+    renderer.render(<TvShowPage isReadyTvShows tvShows={[{ id: 1 }, { id: 2 }]} />);
     const result = renderer.getRenderOutput();
 
     expect(result).toMatchSnapshot();

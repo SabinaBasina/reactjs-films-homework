@@ -3,7 +3,29 @@
 exports[`test TvShowPage test 1 1`] = `
 <main
   className="TvShows"
-/>
+>
+  <div>
+    <withRouter(Search) />
+    <div
+      className="TvShowLibrary"
+    >
+      <TvShow
+        data={
+          Object {
+            "id": 1,
+          }
+        }
+      />
+      <TvShow
+        data={
+          Object {
+            "id": 2,
+          }
+        }
+      />
+    </div>
+  </div>
+</main>
 `;
 
 exports[`test TvShowPage test 2 1`] = `null`;

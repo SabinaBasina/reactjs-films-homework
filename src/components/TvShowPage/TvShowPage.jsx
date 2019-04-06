@@ -6,17 +6,12 @@ import Search from '../Search';
 import styles from './TvShowPage.scss';
 
 class TvShowPage extends Component {
-  state = {
-    readyTvShows: false,
-  }
-
   componentDidMount() {
     const {
       page,
       loadTvShows,
       searchValue,
       getSearchResult,
-      isReadyTvShows,
     } = this.props;
 
     if (searchValue) {
@@ -24,7 +19,6 @@ class TvShowPage extends Component {
     } else {
       loadTvShows(page);
     }
-    this.onReady(isReadyTvShows);
   }
 
   componentDidUpdate(prevProps) {
@@ -33,7 +27,6 @@ class TvShowPage extends Component {
       loadTvShows,
       searchValue,
       getSearchResult,
-      isReadyTvShows,
     } = this.props;
 
     if (page !== prevProps.page) {
@@ -42,19 +35,10 @@ class TvShowPage extends Component {
     if (searchValue !== prevProps.searchValue) {
       getSearchResult(searchValue);
     }
-    if (isReadyTvShows !== prevProps.isReadyTvShows) {
-      this.onReady(isReadyTvShows);
-    }
-  }
-
-  onReady = (newIsReady) => {
-    this.setState({ readyTvShows: newIsReady });
   }
 
   render() {
-    const { tvShows } = this.props;
-    const { readyTvShows } = this.state;
-
+    const { tvShows, isReadyTvShows } = this.props;
     if (!tvShows) {
       return null;
     }
@@ -62,7 +46,7 @@ class TvShowPage extends Component {
     return (
       <main className={styles.TvShows}>
 
-        {readyTvShows
+        {isReadyTvShows
             && (
             <div>
               <Search />

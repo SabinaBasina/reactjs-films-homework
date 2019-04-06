@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.31% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/13</span>
+        <span class='fraction'>7/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">55.56% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>5/9</span>
+        <span class='fraction'>7/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">83.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/6</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.31% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/13</span>
+        <span class='fraction'>7/7</span>
       </div>
     </div>
     <p class="quiet">
@@ -104,24 +104,7 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,11 +115,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,18 +122,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -171,7 +137,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,33 +172,16 @@ import Episode from '../Episode';
 import styles from './Episodes.scss';
 &nbsp;
 class Episodes extends Component {
-  state = {
-    readyEpisodes: false,
-  }
-&nbsp;
   componentDidMount() {
-    const { nameTvShow, loadTvShowEpisodes, isReadyEpisodes } = this.props;
+    const { nameTvShow, loadTvShowEpisodes } = this.props;
     loadTvShowEpisodes(nameTvShow);
-    this.onReady(isReadyEpisodes);
-  }
-&nbsp;
-  componentDidUpdate(prevProps) {
-    const { isReadyEpisodes } = this.props;
-    if (isReadyEpisodes !== prevProps.isReadyEpisodes) {
-      this.onReady(isReadyEpisodes);
-    }
-  }
-&nbsp;
-  onReady = (newIsReady) =&gt; {
-    this.setState({ readyEpisodes: newIsReady });
   }
 &nbsp;
   render() {
-    const { tvShowEpisodes } = this.props;
-    const { readyEpisodes } = this.state;
+    const { tvShowEpisodes, isReadyEpisodes } = this.props;
     return (
       &lt;div&gt;
-        {readyEpisodes === false
+        {isReadyEpisodes === false
           &amp;&amp; (
           &lt;img
             src={Loading}
@@ -241,12 +190,12 @@ class Episodes extends Component {
           /&gt;
           )}
 &nbsp;
-        {readyEpisodes
+        {isReadyEpisodes
           &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;div&gt;</span>
+          &lt;div&gt;
             {tvShowEpisodes &amp;&amp; tvShowEpisodes._embedded
-              &amp;&amp; tvShowEpisodes._embedded.episodes.map(<span class="fstat-no" title="function not covered" >ep</span>isode =&gt; (
-<span class="cstat-no" title="statement not covered" >                &lt;Episode key={episode.id} data={episode} /&gt;)</span>)
+              &amp;&amp; tvShowEpisodes._embedded.episodes.map(episode =&gt; (
+                &lt;Episode key={episode.id} data={episode} /&gt;))
             }
           &lt;/div&gt;
           )}
@@ -277,7 +226,7 @@ Episodes.defaultProps = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Apr 05 2019 19:12:32 GMT+0300 (Moscow Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Apr 06 2019 17:08:00 GMT+0300 (Moscow Standard Time)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>

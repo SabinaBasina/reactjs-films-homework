@@ -8,33 +8,16 @@ import Episode from '../Episode';
 import styles from './Episodes.scss';
 
 class Episodes extends Component {
-  state = {
-    readyEpisodes: false,
-  }
-
   componentDidMount() {
-    const { nameTvShow, loadTvShowEpisodes, isReadyEpisodes } = this.props;
+    const { nameTvShow, loadTvShowEpisodes } = this.props;
     loadTvShowEpisodes(nameTvShow);
-    this.onReady(isReadyEpisodes);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { isReadyEpisodes } = this.props;
-    if (isReadyEpisodes !== prevProps.isReadyEpisodes) {
-      this.onReady(isReadyEpisodes);
-    }
-  }
-
-  onReady = (newIsReady) => {
-    this.setState({ readyEpisodes: newIsReady });
   }
 
   render() {
-    const { tvShowEpisodes } = this.props;
-    const { readyEpisodes } = this.state;
+    const { tvShowEpisodes, isReadyEpisodes } = this.props;
     return (
       <div>
-        {readyEpisodes === false
+        {isReadyEpisodes === false
           && (
           <img
             src={Loading}
@@ -43,7 +26,7 @@ class Episodes extends Component {
           />
           )}
 
-        {readyEpisodes
+        {isReadyEpisodes
           && (
           <div>
             {tvShowEpisodes && tvShowEpisodes._embedded

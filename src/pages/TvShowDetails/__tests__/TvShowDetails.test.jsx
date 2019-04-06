@@ -13,7 +13,7 @@ describe('test', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('TvShowDetails test 2', () => {
+  it('TvShowDetails test id is', () => {
     const renderer = Renderer.create(<TvShowDetails id="1" />);
     const testInstance = renderer.toJSON();
     expect(testInstance).toMatchSnapshot();
@@ -21,47 +21,29 @@ describe('test', () => {
 
   test('Episode test img is', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<TvShowDetails tvShow={{ image: { medium: 'medium' } }} />);
+    renderer.render(<TvShowDetails isReadyTvShow tvShow={{ image: { medium: 'medium' } }} />);
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();
   });
 
   test('Episode test img no', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<TvShowDetails tvShow={{ }} />);
+    renderer.render(<TvShowDetails isReadyTvShow tvShow={{ }} />);
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();
   });
 
   test('Episode test genres is', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<TvShowDetails tvShow={{ genres: 'genres' }} />);
+    renderer.render(<TvShowDetails isReadyTvShow tvShow={{ genres: 'genres' }} />);
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();
   });
 
   test('Episode test country is', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<TvShowDetails tvShow={{ network: { country: { name: 'name' } } }} />);
+    renderer.render(<TvShowDetails isReadyTvShow tvShow={{ network: { country: { name: 'name' } } }} />);
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();
   });
-
-  // it('TvShowDetails componentDidUpdate: should not onReady', () => {
-  //   const onReady = jest.fn();
-  //   TvShowDetails.prototype.componentDidUpdate.call(
-  //     { props: { isReadyTvShow: true } },
-  //     { isReadyTvShow: true, onReady },
-  //   );
-  //   expect(onReady).toHaveBeenCalledTimes(0);
-  // });
-
-  // it('TvShowDetails componentDidUpdate: should onReady', () => {
-  //   const onReady = jest.fn();
-  //   TvShowDetails.prototype.componentDidUpdate.call(
-  //     { props: { isReadyTvShow: true } },
-  //     { isReadyTvShow: false, onReady },
-  //   );
-  //   expect(onReady).toHaveBeenCalledTimes(1);
-  // });
 });

@@ -2,7 +2,6 @@
 import { createAction } from 'redux-actions';
 import http from 'axios';
 
-
 const setTvShows = createAction('SET_TVSHOWS');
 const setIsReadyTvShows = createAction('IS_READY_TVSHOWS');
 
