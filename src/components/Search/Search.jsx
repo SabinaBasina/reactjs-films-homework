@@ -24,12 +24,12 @@ class Search extends Component {
           autoComplete="off"
           id="search"
           className={styles.InputSearch}
-          type="text"
+          type="search"
           value={searchValue}
           onChange={this.handleChange}
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
-              console.log('\n\nclick');
+              console.log('Enter!!!!!!!!!!');
               history.push(`/search/${e.target.value}`);
             }
           }}
