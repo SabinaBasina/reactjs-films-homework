@@ -18,7 +18,7 @@ class Search extends Component {
     const { searchValue } = this.state;
     const { history } = this.props;
     return (
-      <div>
+      <form>
         <label htmlFor="search" />
         <input
           autoComplete="off"
@@ -29,12 +29,13 @@ class Search extends Component {
           onChange={this.handleChange}
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
+              console.log('\n\nclick');
               history.push(`/search/${e.target.value}`);
             }
           }}
           placeholder="Search"
         />
-      </div>
+      </form>
     );
   }
 }
