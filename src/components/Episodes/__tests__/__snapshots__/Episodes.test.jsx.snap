@@ -2,6 +2,9 @@
 
 exports[`Episodes Episodes is 1`] = `
 <div>
+  <_default
+    loading={false}
+  />
   <div>
     <Episode
       data={
@@ -24,8 +27,8 @@ exports[`Episodes Episodes is 1`] = `
 exports[`Episodes Episodes snapshot 1`] = `
 <div>
   <img
-    alt="Loading Episodes"
-    className="Ready"
+    alt="Loading"
+    className="loader"
     src="test-file-stub"
   />
 </div>

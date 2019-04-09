@@ -10,9 +10,9 @@ class Episode extends PureComponent {
     const { data } = this.props;
     return (
 
-      <div className={styles.Episode}>
+      <div className={styles.episode}>
 
-        <b className={styles.Number}>
+        <b className={styles.number}>
           {data.season}
             x
           {data.number}
@@ -20,7 +20,7 @@ class Episode extends PureComponent {
 
         <img src={data.image ? data.image.medium : NoImageEpisode} alt="EpisodeImage" />
 
-        <div className={styles.About}>
+        <div className={styles.about}>
           <b>
             {data.name}
           </b>

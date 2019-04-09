@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Menu.scss';
 
 const Menu = () => (
-  <header className={styles.Header}>
+  <header className={styles.header}>
 
     <Link to="/">
       <button type="button">

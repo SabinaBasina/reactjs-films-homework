@@ -2,7 +2,7 @@
 
 exports[`Menu snapsphot 1`] = `
 <header
-  className="Header"
+  className="header"
 >
   <Link
     to="/"

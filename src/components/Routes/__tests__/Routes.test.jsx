@@ -40,6 +40,6 @@ describe('Routes', () => {
       </MemoryRouter>,
     );
     expect(component).toMatchSnapshot();
-    expect(Home.mock.calls[0][0]).toEqual({ pageNumber: '1' });
+    expect(Home.mock.calls[0][0]).toEqual({ pageNumber: 1 });
   });
 });

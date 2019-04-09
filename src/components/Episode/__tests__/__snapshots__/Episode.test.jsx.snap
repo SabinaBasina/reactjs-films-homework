@@ -2,10 +2,10 @@
 
 exports[`Episode test img is 1`] = `
 <div
-  className="Episode"
+  className="episode"
 >
   <b
-    className="Number"
+    className="number"
   >
     x
   </b>
@@ -14,7 +14,7 @@ exports[`Episode test img is 1`] = `
     src="medium"
   />
   <div
-    className="About"
+    className="about"
   >
     <b />
     <br />
@@ -31,10 +31,10 @@ exports[`Episode test img is 1`] = `
 
 exports[`Episode test img no 1`] = `
 <div
-  className="Episode"
+  className="episode"
 >
   <b
-    className="Number"
+    className="number"
   >
     x
   </b>
@@ -43,7 +43,7 @@ exports[`Episode test img no 1`] = `
     src="test-file-stub"
   />
   <div
-    className="About"
+    className="about"
   >
     <b />
     <br />

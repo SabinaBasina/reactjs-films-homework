@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './Home.scss';
 import TvShowPage from '../../components/TvShowPage';
-import Loading from '../../images/Loading.gif';
+import Loader from '../../components/Loader';
 
 class Home extends Component {
   render() {
@@ -15,24 +15,17 @@ class Home extends Component {
 
       <main>
 
-        <TvShowPage page={Number(pageNumber)} />
+        <TvShowPage page={pageNumber} />
 
-        {isReadyTvShows === false
-          && (
-            <img
-              src={Loading}
-              className={styles.Ready}
-              alt="Loading page"
-            />
-          )}
+        <Loader loading={!isReadyTvShows} />
 
         {isReadyTvShows
           && (
-            <div className={styles.Pager}>
+            <div className={styles.pager}>
 
               {pageNumber > 0
                 && (
-                  <Link to={`/page/${Number(pageNumber) - 1}`}>
+                  <Link to={`/page/${pageNumber - 1}`}>
                     <button type="button">
                       &larr; Previous Page
                     </button>
@@ -40,7 +33,7 @@ class Home extends Component {
                 )
               }
 
-              <Link to={`/page/${Number(pageNumber) + 1}`}>
+              <Link to={`/page/${pageNumber + 1}`}>
                 <button type="button">
                   Next Page &rarr;
                 </button>
@@ -61,10 +54,10 @@ export default Home;
 
 Home.propTypes = {
   isReadyTvShows: PropTypes.bool,
-  pageNumber: PropTypes.string,
+  pageNumber: PropTypes.number,
 };
 
 Home.defaultProps = {
   isReadyTvShows: false,
-  pageNumber: '0',
+  pageNumber: 0,
 };

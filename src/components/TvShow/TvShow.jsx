@@ -8,12 +8,12 @@ class TvShow extends PureComponent {
   render() {
     const { data } = this.props;
     return (
-      <Link to={`/tvShowDetails/${data.id}`} className={styles.TvShow}>
+      <Link to={`/tvShowDetails/${data.id}`} className={styles.tvshow}>
         <br />
         <img src={data.image ? data.image.medium : NoImage} alt="" />
         {data.rating && data.rating.average
         && (
-        <button className={styles.RatingTvShow} type="button">
+        <button className={styles.rating} type="button">
           {data.rating.average}
         </button>
         )}

@@ -5,10 +5,8 @@ exports[`Home Home snapshot 1`] = `
   <Connect(TvShowPage)
     page={0}
   />
-  <img
-    alt="Loading page"
-    className="Ready"
-    src="test-file-stub"
+  <_default
+    loading={true}
   />
 </main>
 `;
@@ -18,8 +16,11 @@ exports[`Home Home test pageNumber is 1`] = `
   <Connect(TvShowPage)
     page={1}
   />
+  <_default
+    loading={false}
+  />
   <div
-    className="Pager"
+    className="pager"
   >
     <Link
       to="/page/0"

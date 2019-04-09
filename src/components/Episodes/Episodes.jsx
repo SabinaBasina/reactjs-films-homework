@@ -3,9 +3,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Loading from '../../images/Loading.gif';
 import Episode from '../Episode';
-import styles from './Episodes.scss';
+import Loader from '../Loader';
 
 class Episodes extends Component {
   componentDidMount() {
@@ -17,14 +16,8 @@ class Episodes extends Component {
     const { tvShowEpisodes, isReadyEpisodes } = this.props;
     return (
       <div>
-        {isReadyEpisodes === false
-          && (
-          <img
-            src={Loading}
-            className={styles.Ready}
-            alt="Loading Episodes"
-          />
-          )}
+
+        <Loader loading={!isReadyEpisodes} />
 
         {isReadyEpisodes
           && (

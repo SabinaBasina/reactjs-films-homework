@@ -1,38 +1,32 @@
-.Ready {
-  display: block;
-  margin: 30px auto 0 auto;
-  text-align: center;
-}
-
-.TvShow {
+.tvshow {
   text-align: justify;
 }
 
-.TvShow h1 {
+.tvshow h1 {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
   font-weight: 500;
 }
 
-.Information {
+.information {
   display: block;
   margin-left: 20%;
   margin-right: 20%;
 }
 
-.Information::after {
+.information::after {
   content: " ";
   display: table;
   clear: both;
 }
 
-.TvShowImage {
+.image {
   float: left;
   margin: 0 35px 15px 0;
 }
 
-.Episodes {
+.episodes {
   margin: 80px 15% 60px 15%;
   height: 35px;
   background-color: #222;
@@ -44,30 +38,30 @@
 }
 
 @media only screen and (max-width: 1100px) {
-  .Information {
+  .information {
     margin-left: 10%;
     margin-right: 10%;
   }
 
-  .Episodes {
+  .episodes {
     margin-left: 5%;
     margin-right: 5%;
   }
 }
 
 @media only screen and (max-width: 820px) {
-  .Episodes {
+  .episodes {
     margin-left: 0;
     margin-right: 0;
   }
 
-  .TvShowImage {
+  .image {
     display: block;
     margin: 0 auto 40px auto;
     float: none;
   }
 
-  .Information {
+  .information {
     margin-left: 5%;
     margin-right: 5%;
   }

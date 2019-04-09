@@ -1,11 +1,11 @@
 $back-color: #222;
 
-.Header {
+.header {
   background-color: $back-color;
   height: 55px;
 }
 
-.Header button {
+.header button {
   outline: none;
   color: #9d9d9d;
   border: none;
@@ -15,16 +15,16 @@ $back-color: #222;
   margin-left: 20%;
 }
 
-.Header button:hover {
+.header button:hover {
   color: white;
 }
 
 @media only screen and (max-width: 759px) {
-  .Header {
+  .header {
     text-align: center;
   }
 
-  .Header button {
+  .header button {
     margin-left: 0;
   }
 }

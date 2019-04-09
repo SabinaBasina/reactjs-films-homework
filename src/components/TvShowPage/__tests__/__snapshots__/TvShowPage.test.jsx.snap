@@ -6,12 +6,12 @@ exports[`TvShowPage TvShowPage test searchValue is 1`] = `null`;
 
 exports[`TvShowPage TvShowPage test tvShows is 1`] = `
 <main
-  className="TvShows"
+  className="tvshows"
 >
   <div>
     <withRouter(Search) />
     <div
-      className="TvShowLibrary"
+      className="library"
     >
       <TvShow
         data={

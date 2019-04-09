@@ -27,7 +27,7 @@ class Search extends Component {
       <div>
         <input
           autoComplete="off"
-          className={styles.InputSearch}
+          className={styles.input}
           type="search"
           value={searchValue}
           onChange={this.handleChange}

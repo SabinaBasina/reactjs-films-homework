@@ -2,16 +2,19 @@
 
 exports[`TvShowDetails Episode test country name is 1`] = `
 <div>
+  <_default
+    loading={false}
+  />
   <div
-    className="TvShow"
+    className="tvshow"
   >
     <h1 />
     <div
-      className="Information"
+      className="information"
     >
       <img
         alt=""
-        className="TvShowImage"
+        className="image"
         src="test-file-stub"
       />
       <div>
@@ -39,7 +42,7 @@ exports[`TvShowDetails Episode test country name is 1`] = `
       </div>
     </div>
     <p
-      className="Episodes"
+      className="episodes"
     >
       Episodes
     </p>
@@ -50,16 +53,19 @@ exports[`TvShowDetails Episode test country name is 1`] = `
 
 exports[`TvShowDetails Episode test genres is 1`] = `
 <div>
+  <_default
+    loading={false}
+  />
   <div
-    className="TvShow"
+    className="tvshow"
   >
     <h1 />
     <div
-      className="Information"
+      className="information"
     >
       <img
         alt=""
-        className="TvShowImage"
+        className="image"
         src="test-file-stub"
       />
       <div>
@@ -87,7 +93,7 @@ exports[`TvShowDetails Episode test genres is 1`] = `
       </div>
     </div>
     <p
-      className="Episodes"
+      className="episodes"
     >
       Episodes
     </p>
@@ -98,16 +104,19 @@ exports[`TvShowDetails Episode test genres is 1`] = `
 
 exports[`TvShowDetails Episode test img is 1`] = `
 <div>
+  <_default
+    loading={false}
+  />
   <div
-    className="TvShow"
+    className="tvshow"
   >
     <h1 />
     <div
-      className="Information"
+      className="information"
     >
       <img
         alt=""
-        className="TvShowImage"
+        className="image"
         src="medium"
       />
       <div>
@@ -134,7 +143,7 @@ exports[`TvShowDetails Episode test img is 1`] = `
       </div>
     </div>
     <p
-      className="Episodes"
+      className="episodes"
     >
       Episodes
     </p>
@@ -145,16 +154,19 @@ exports[`TvShowDetails Episode test img is 1`] = `
 
 exports[`TvShowDetails Episode test tvShow no 1`] = `
 <div>
+  <_default
+    loading={false}
+  />
   <div
-    className="TvShow"
+    className="tvshow"
   >
     <h1 />
     <div
-      className="Information"
+      className="information"
     >
       <img
         alt=""
-        className="TvShowImage"
+        className="image"
         src="test-file-stub"
       />
       <div>
@@ -181,7 +193,7 @@ exports[`TvShowDetails Episode test tvShow no 1`] = `
       </div>
     </div>
     <p
-      className="Episodes"
+      className="episodes"
     >
       Episodes
     </p>
@@ -192,10 +204,8 @@ exports[`TvShowDetails Episode test tvShow no 1`] = `
 
 exports[`TvShowDetails TvShowDetails snapshot 1`] = `
 <div>
-  <img
-    alt="Loading TvShow"
-    className="Ready"
-    src="test-file-stub"
+  <_default
+    loading={true}
   />
 </div>
 `;
@@ -203,8 +213,8 @@ exports[`TvShowDetails TvShowDetails snapshot 1`] = `
 exports[`TvShowDetails TvShowDetails test id is 1`] = `
 <div>
   <img
-    alt="Loading TvShow"
-    className="Ready"
+    alt="Loading"
+    className="loader"
     src="test-file-stub"
   />
 </div>

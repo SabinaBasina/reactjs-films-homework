@@ -2,7 +2,7 @@
 
 exports[`TvShow TvShow test genres is 1`] = `
 <Link
-  className="TvShow"
+  className="tvshow"
   to="/tvShowDetails/undefined"
 >
   <br />
@@ -21,7 +21,7 @@ exports[`TvShow TvShow test genres is 1`] = `
 
 exports[`TvShow TvShow test img is 1`] = `
 <Link
-  className="TvShow"
+  className="tvshow"
   to="/tvShowDetails/undefined"
 >
   <br />
@@ -38,7 +38,7 @@ exports[`TvShow TvShow test img is 1`] = `
 
 exports[`TvShow TvShow test img no 1`] = `
 <Link
-  className="TvShow"
+  className="tvshow"
   to="/tvShowDetails/undefined"
 >
   <br />
@@ -55,7 +55,7 @@ exports[`TvShow TvShow test img no 1`] = `
 
 exports[`TvShow TvShow test rating is 1`] = `
 <Link
-  className="TvShow"
+  className="tvshow"
   to="/tvShowDetails/undefined"
 >
   <br />
@@ -64,7 +64,7 @@ exports[`TvShow TvShow test rating is 1`] = `
     src="test-file-stub"
   />
   <button
-    className="RatingTvShow"
+    className="rating"
     type="button"
   >
     rating

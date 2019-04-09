@@ -1,12 +1,10 @@
-@import '../TvShowDetails/TvShowDetails.scss';
-
-.Pager {
+.pager {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 80px;
 }
 
-.Pager button {
+.pager button {
   outline: none;
   border-radius: 25px;
   width: 140px;
@@ -20,6 +18,6 @@
   margin: 0 13% 15px 13%;
 }
 
-.Pager button:hover {
+.pager button:hover {
   color: white;
 }

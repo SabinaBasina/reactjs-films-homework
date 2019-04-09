@@ -14,7 +14,7 @@ class Routes extends PureComponent {
         <Route path="/" exact component={Home} />
         <Route
           path="/page/:pageNumber"
-          render={props => <Home pageNumber={props.match.params.pageNumber} />}
+          render={props => <Home pageNumber={Number(props.match.params.pageNumber)} />}
         />
         <Route
           path="/search/:searchValue"

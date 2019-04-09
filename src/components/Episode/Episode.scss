@@ -1,43 +1,43 @@
-.Episode {
+.episode {
   display: block;
   margin: 0 20% 70px 20%;
 }
 
-.Episode::after {
+.episode::after {
   content: " ";
   display: table;
   clear: both;
 }
 
-.Number {
+.number {
   float: left;
   margin-right: 30px;
 }
 
-.Episode img {
+.episode img {
   float: left;
   margin: 0 30px 10px 0;
 }
 
 @media only screen and (max-width: 1100px) {
-  .Episode {
+  .episode {
     margin: 0 10% 100px 10%;
   }
 }
 
 @media only screen and (max-width: 820px) {
-  .Episode {
+  .episode {
     margin: 0 5% 100px 5%;
   }
 
-  .Number {
+  .number {
     float: none;
     display: block;
     margin: 0 auto 15px auto;
     text-align: center;
   }
 
-  .Episode img {
+  .episode img {
     float: none;
     display: block;
     margin-left: auto;

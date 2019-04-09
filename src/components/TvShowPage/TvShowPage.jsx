@@ -44,13 +44,13 @@ class TvShowPage extends Component {
     }
 
     return (
-      <main className={styles.TvShows}>
+      <main className={styles.tvshows}>
 
         {isReadyTvShows
             && (
             <div>
               <Search />
-              <div className={styles.TvShowLibrary}>
+              <div className={styles.library}>
                 {tvShows.map(tvShowData => (
                   <TvShow key={tvShowData.id} data={tvShowData} />
                 ))}

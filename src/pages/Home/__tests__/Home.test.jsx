@@ -13,7 +13,7 @@ describe('Home', () => {
 
   test('Home test pageNumber is', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<Home isReadyTvShows pageNumber="1" />);
+    renderer.render(<Home isReadyTvShows pageNumber={1} />);
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();
   });
