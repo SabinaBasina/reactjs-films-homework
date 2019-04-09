@@ -5,8 +5,8 @@ import Renderer from 'react-test-renderer';
 import Episodes from '../Episodes';
 
 
-describe('test', () => {
-  it('Episodes test 1', () => {
+describe('Episodes', () => {
+  it('Episodes is', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<Episodes
       isReadyEpisodes
@@ -16,7 +16,7 @@ describe('test', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('Episodes test 2', () => {
+  it('Episodes snapshot', () => {
     const renderer = Renderer.create(<Episodes nameTvShow="nameTvShow" />);
     const testInstance = renderer.toJSON();
     expect(testInstance).toMatchSnapshot();

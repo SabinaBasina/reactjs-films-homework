@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Episode test country is 1`] = `
+exports[`TvShowDetails Episode test country name is 1`] = `
 <div>
   <div
     className="TvShow"
@@ -48,7 +48,7 @@ exports[`test Episode test country is 1`] = `
 </div>
 `;
 
-exports[`test Episode test genres is 1`] = `
+exports[`TvShowDetails Episode test genres is 1`] = `
 <div>
   <div
     className="TvShow"
@@ -96,7 +96,7 @@ exports[`test Episode test genres is 1`] = `
 </div>
 `;
 
-exports[`test Episode test img is 1`] = `
+exports[`TvShowDetails Episode test img is 1`] = `
 <div>
   <div
     className="TvShow"
@@ -143,7 +143,7 @@ exports[`test Episode test img is 1`] = `
 </div>
 `;
 
-exports[`test Episode test img no 1`] = `
+exports[`TvShowDetails Episode test tvShow no 1`] = `
 <div>
   <div
     className="TvShow"
@@ -190,7 +190,7 @@ exports[`test Episode test img no 1`] = `
 </div>
 `;
 
-exports[`test TvShowDetails test 1 1`] = `
+exports[`TvShowDetails TvShowDetails snapshot 1`] = `
 <div>
   <img
     alt="Loading TvShow"
@@ -200,7 +200,7 @@ exports[`test TvShowDetails test 1 1`] = `
 </div>
 `;
 
-exports[`test TvShowDetails test id is 1`] = `
+exports[`TvShowDetails TvShowDetails test id is 1`] = `
 <div>
   <img
     alt="Loading TvShow"

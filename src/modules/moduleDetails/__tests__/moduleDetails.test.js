@@ -9,7 +9,7 @@ import * as selectors from '../moduleDetailsSelectors';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('reducers', () => {
+describe('moduleDetails', () => {
   beforeEach(() => {
     moxios.install();
   });
@@ -90,7 +90,7 @@ describe('reducers', () => {
     ).toMatchSnapshot();
   });
 
-  it('async action 1', (done) => {
+  it('async action loadTvShowEpisodes', (done) => {
     const tvShowEpisodes = { };
     moxios.stubRequest('https://api.tvmaze.com/singlesearch/shows?q=1&embed=episodes', {
       status: 200,
@@ -112,7 +112,7 @@ describe('reducers', () => {
     });
   });
 
-  it('async action 2', (done) => {
+  it('async action loadTvShowsDetails', (done) => {
     const tvShow = { };
     moxios.stubRequest('https://api.tvmaze.com/shows/1', {
       status: 200,

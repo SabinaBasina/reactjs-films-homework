@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Episode test pageNumber is 1`] = `
+exports[`Home Home snapshot 1`] = `
+<main>
+  <Connect(TvShowPage)
+    page={0}
+  />
+  <img
+    alt="Loading page"
+    className="Ready"
+    src="test-file-stub"
+  />
+</main>
+`;
+
+exports[`Home Home test pageNumber is 1`] = `
 <main>
   <Connect(TvShowPage)
     page={1}
@@ -27,18 +40,5 @@ exports[`test Episode test pageNumber is 1`] = `
       </button>
     </Link>
   </div>
-</main>
-`;
-
-exports[`test Home test 1`] = `
-<main>
-  <Connect(TvShowPage)
-    page={0}
-  />
-  <img
-    alt="Loading page"
-    className="Ready"
-    src="test-file-stub"
-  />
 </main>
 `;

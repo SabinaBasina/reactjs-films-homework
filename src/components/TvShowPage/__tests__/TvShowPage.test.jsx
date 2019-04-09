@@ -4,8 +4,8 @@ import Renderer from 'react-test-renderer';
 
 import TvShowPage from '../TvShowPage';
 
-describe('test', () => {
-  test('TvShowPage test 1', () => {
+describe('TvShowPage', () => {
+  it('TvShowPage test tvShows is', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<TvShowPage isReadyTvShows tvShows={[{ id: 1 }, { id: 2 }]} />);
     const result = renderer.getRenderOutput();
@@ -13,13 +13,13 @@ describe('test', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('TvShowPage test 2', () => {
+  it('TvShowPage test searchValue is', () => {
     const renderer = Renderer.create(<TvShowPage searchValue="searchValue" />);
     const testInstance = renderer.toJSON();
     expect(testInstance).toMatchSnapshot();
   });
 
-  it('TvShowPage test 3', () => {
+  it('TvShowPage test page is', () => {
     const renderer = Renderer.create(<TvShowPage page={1} />);
     const testInstance = renderer.toJSON();
     expect(testInstance).toMatchSnapshot();
@@ -43,7 +43,7 @@ describe('test', () => {
     expect(loadTvShows).toHaveBeenCalledTimes(1);
   });
 
-  it('TvShowPage componentDidUpdate: should not load tv shows', () => {
+  it('TvShowPage componentDidUpdate: should not getSearchResult', () => {
     const getSearchResult = jest.fn();
     TvShowPage.prototype.componentDidUpdate.call(
       { props: { searchValue: 'searchValue_1', getSearchResult } },
@@ -52,7 +52,7 @@ describe('test', () => {
     expect(getSearchResult).toHaveBeenCalledTimes(0);
   });
 
-  it('TvShowPage componentDidUpdate: should load tv shows', () => {
+  it('TvShowPage componentDidUpdate: should getSearchResult', () => {
     const getSearchResult = jest.fn();
     TvShowPage.prototype.componentDidUpdate.call(
       { props: { searchValue: 'searchValue_1', getSearchResult } },

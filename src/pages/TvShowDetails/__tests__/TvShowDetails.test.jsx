@@ -4,8 +4,8 @@ import Renderer from 'react-test-renderer';
 
 import TvShowDetails from '../TvShowDetails';
 
-describe('test', () => {
-  it('TvShowDetails test 1', () => {
+describe('TvShowDetails', () => {
+  it('TvShowDetails snapshot', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<TvShowDetails />);
     const result = renderer.getRenderOutput();
@@ -26,7 +26,7 @@ describe('test', () => {
     expect(result).toMatchSnapshot();
   });
 
-  test('Episode test img no', () => {
+  test('Episode test tvShow no', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<TvShowDetails isReadyTvShow tvShow={{ }} />);
     const result = renderer.getRenderOutput();
@@ -40,7 +40,7 @@ describe('test', () => {
     expect(result).toMatchSnapshot();
   });
 
-  test('Episode test country is', () => {
+  test('Episode test country name is', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<TvShowDetails isReadyTvShow tvShow={{ network: { country: { name: 'name' } } }} />);
     const result = renderer.getRenderOutput();

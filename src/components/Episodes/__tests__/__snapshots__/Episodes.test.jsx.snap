@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Episodes test 1 1`] = `
+exports[`Episodes Episodes is 1`] = `
 <div>
   <div>
     <Episode
@@ -21,7 +21,7 @@ exports[`test Episodes test 1 1`] = `
 </div>
 `;
 
-exports[`test Episodes test 2 1`] = `
+exports[`Episodes Episodes snapshot 1`] = `
 <div>
   <img
     alt="Loading Episodes"

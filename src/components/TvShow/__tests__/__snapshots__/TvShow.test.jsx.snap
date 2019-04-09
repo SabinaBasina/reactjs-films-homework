@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TvShow test genres 1`] = `
+exports[`TvShow TvShow test genres is 1`] = `
 <Link
   className="TvShow"
   to="/tvShowDetails/undefined"
@@ -19,7 +19,7 @@ exports[`TvShow test genres 1`] = `
 </Link>
 `;
 
-exports[`TvShow test img is 1`] = `
+exports[`TvShow TvShow test img is 1`] = `
 <Link
   className="TvShow"
   to="/tvShowDetails/undefined"
@@ -36,7 +36,7 @@ exports[`TvShow test img is 1`] = `
 </Link>
 `;
 
-exports[`TvShow test img no 1`] = `
+exports[`TvShow TvShow test img no 1`] = `
 <Link
   className="TvShow"
   to="/tvShowDetails/undefined"
@@ -53,7 +53,7 @@ exports[`TvShow test img no 1`] = `
 </Link>
 `;
 
-exports[`TvShow test rating 1`] = `
+exports[`TvShow TvShow test rating is 1`] = `
 <Link
   className="TvShow"
   to="/tvShowDetails/undefined"
