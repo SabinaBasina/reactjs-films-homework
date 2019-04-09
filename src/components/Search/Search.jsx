@@ -14,28 +14,27 @@ class Search extends Component {
     this.setState({ searchValue: e.target.value });
   }
 
+  onKeyPress = (e) => {
+    const { history } = this.props;
+    if (e.key === 'Enter') {
+      history.push(`/search/${e.target.value}`);
+    }
+  }
+
   render() {
     const { searchValue } = this.state;
-    const { history } = this.props;
     return (
-      <form>
-        <label htmlFor="search" />
+      <div>
         <input
           autoComplete="off"
-          id="search"
           className={styles.InputSearch}
           type="search"
           value={searchValue}
           onChange={this.handleChange}
-          onKeyPress={(e) => {
-            if (e.key === 'Enter') {
-              console.log('Enter!!!!!!!!!!');
-              history.push(`/search/${e.target.value}`);
-            }
-          }}
+          onKeyPress={e => this.onKeyPress(e)}
           placeholder="Search"
         />
-      </form>
+      </div>
     );
   }
 }

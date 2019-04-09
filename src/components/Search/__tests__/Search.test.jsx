@@ -1,21 +1,27 @@
 import React from 'react';
 import ReactTestUtils from 'react-dom/test-utils';
-// import TestRenderer from 'react-test-renderer';
 import Search from '../Search';
 
 
-describe('test', () => {
-  it('Search test', () => {
-    const spy = jest.fn();
+describe('Search', () => {
+  it('should invoke history.push and change value', () => {
     const historyMock = { push: jest.fn() };
-    const component = ReactTestUtils.renderIntoDocument(<Search onKeyPress={spy} history={historyMock} />);
+    const component = ReactTestUtils.renderIntoDocument(
+      <Search history={historyMock} />,
+    );
     const input = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'InputSearch');
     expect(input.value).toEqual('');
     ReactTestUtils.Simulate.keyPress(input, { key: 'Enter', keyCode: 13, which: 13 });
     ReactTestUtils.Simulate.change(input, { target: { value: 'a' } });
     expect(input.value).toEqual('a');
     expect(historyMock.push.mock.calls.length).toBe(1);
-    // expect(spy).toBeCalledWith('a');
-    // console.log('!!!!', input);
+  });
+
+  it('should not invoke history.push', () => {
+    const historyMock = { push: jest.fn() };
+    const component = ReactTestUtils.renderIntoDocument(<Search history={historyMock} />);
+    const input = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'InputSearch');
+    ReactTestUtils.Simulate.keyPress(input, { key: 'Space', keyCode: 32, which: 32 });
+    expect(historyMock.push).toHaveBeenCalledTimes(0);
   });
 });
