@@ -22,7 +22,9 @@
       "\\.(css|scss)$": "identity-obj-proxy"
     },
     "collectCoverageFrom": [
-      "**/*.jsx"
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/Root.jsx"
     ],
     "coverageThreshold": {
       "./src": {
