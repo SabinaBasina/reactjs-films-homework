@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-boolean-value */
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import React, { Component, Fragment } from 'react';
@@ -22,7 +23,7 @@ class Episodes extends Component {
           ))}
         </Fragment>
       );
-    } return <Loader loading />;
+    } return <Loader loading={true} />;
   }
 }
 
