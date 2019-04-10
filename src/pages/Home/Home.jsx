@@ -1,5 +1,4 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -7,48 +6,46 @@ import styles from './Home.scss';
 import TvShowPage from '../../components/TvShowPage';
 import Loader from '../../components/Loader';
 
-class Home extends Component {
-  render() {
-    const { isReadyTvShows, pageNumber } = this.props;
+const Home = (props) => {
+  const { isReadyTvShows, pageNumber } = props;
 
-    return (
+  return (
 
-      <main>
+    <main>
 
-        <TvShowPage page={pageNumber} />
+      <TvShowPage page={pageNumber} />
 
-        <Loader loading={!isReadyTvShows} />
+      <Loader loading={!isReadyTvShows} />
 
-        {isReadyTvShows
-          && (
-            <div className={styles.pager}>
+      {isReadyTvShows
+        && (
+          <div className={styles.pager}>
 
-              {pageNumber > 0
-                && (
-                  <Link to={`/page/${pageNumber - 1}`}>
-                    <button type="button">
-                      &larr; Previous Page
-                    </button>
-                  </Link>
-                )
-              }
+            {pageNumber > 0
+              && (
+                <Link to={`/page/${pageNumber - 1}`}>
+                  <button type="button">
+                    &larr; Previous Page
+                  </button>
+                </Link>
+              )
+            }
 
-              <Link to={`/page/${pageNumber + 1}`}>
-                <button type="button">
-                  Next Page &rarr;
-                </button>
-              </Link>
+            <Link to={`/page/${pageNumber + 1}`}>
+              <button type="button">
+                Next Page &rarr;
+              </button>
+            </Link>
 
-            </div>
-          )
-        }
+          </div>
+        )
+      }
 
 
-      </main>
+    </main>
 
-    );
-  }
-}
+  );
+};
 
 export default Home;
 

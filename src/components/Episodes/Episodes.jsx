@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import Episode from '../Episode';
@@ -14,23 +14,15 @@ class Episodes extends Component {
 
   render() {
     const { tvShowEpisodes, isReadyEpisodes } = this.props;
-    return (
-      <div>
-
-        <Loader loading={!isReadyEpisodes} />
-
-        {isReadyEpisodes
-          && (
-          <div>
-            {tvShowEpisodes && tvShowEpisodes._embedded
-              && tvShowEpisodes._embedded.episodes.map(episode => (
-                <Episode key={episode.id} data={episode} />))
-            }
-          </div>
-          )}
-
-      </div>
-    );
+    if (isReadyEpisodes && tvShowEpisodes && tvShowEpisodes._embedded) {
+      return (
+        <Fragment>
+          {tvShowEpisodes._embedded.episodes.map(episode => (
+            <Episode key={episode.id} data={episode} />
+          ))}
+        </Fragment>
+      );
+    } return <Loader loading />;
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import TvShow from '../TvShow';
@@ -48,14 +48,14 @@ class TvShowPage extends Component {
 
         {isReadyTvShows
             && (
-            <div>
+            <Fragment>
               <Search />
               <div className={styles.library}>
                 {tvShows.map(tvShowData => (
                   <TvShow key={tvShowData.id} data={tvShowData} />
                 ))}
               </div>
-            </div>
+            </Fragment>
             )}
 
       </main>

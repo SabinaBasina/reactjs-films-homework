@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -28,7 +26,6 @@ class Search extends Component {
         <input
           autoComplete="off"
           className={styles.input}
-          type="search"
           value={searchValue}
           onChange={this.handleChange}
           onKeyPress={e => this.onKeyPress(e)}

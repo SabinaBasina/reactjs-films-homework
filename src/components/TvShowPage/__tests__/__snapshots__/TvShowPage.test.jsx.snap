@@ -8,7 +8,7 @@ exports[`TvShowPage TvShowPage test tvShows is 1`] = `
 <main
   className="tvshows"
 >
-  <div>
+  <React.Fragment>
     <withRouter(Search) />
     <div
       className="library"
@@ -28,6 +28,6 @@ exports[`TvShowPage TvShowPage test tvShows is 1`] = `
         }
       />
     </div>
-  </div>
+  </React.Fragment>
 </main>
 `;
