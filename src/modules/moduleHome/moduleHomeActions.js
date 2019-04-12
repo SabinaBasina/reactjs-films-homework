@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { createAction } from 'redux-actions';
 import http from 'axios';
 

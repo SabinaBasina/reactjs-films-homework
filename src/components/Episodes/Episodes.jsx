@@ -23,7 +23,7 @@ class Episodes extends Component {
           ))}
         </Fragment>
       );
-    } return <Loader loading={true} />;
+    } return <Loader loading />;
   }
 }
 
