@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App test 1`] = `
+<Signature
+  name="Sabina Basina"
+/>
+`;

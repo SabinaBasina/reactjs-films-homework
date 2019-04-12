@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signature test 1`] = `
+<main>
+  <h1>
+    undefined
+  </h1>
+  <article
+    className="about"
+  >
+    <p
+      className="text"
+    >
+      <a
+        href="https://github.com/SabinaBasina/"
+      >
+        link to GitHub
+      </a>
+    </p>
+  </article>
+</main>
+`;
