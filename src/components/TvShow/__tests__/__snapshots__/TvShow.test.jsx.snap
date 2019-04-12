@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShow TvShow test genres is 1`] = `
+<Link
+  className="tvshow"
+  to="/tvShowDetails/undefined"
+>
+  <br />
+  <img
+    alt=""
+    src="test-file-stub"
+  />
+  <p>
+    <br />
+    <span>
+      g, e, n, r, e, s
+    </span>
+  </p>
+</Link>
+`;
+
+exports[`TvShow TvShow test img is 1`] = `
+<Link
+  className="tvshow"
+  to="/tvShowDetails/undefined"
+>
+  <br />
+  <img
+    alt=""
+    src="medium"
+  />
+  <p>
+    <br />
+    <span />
+  </p>
+</Link>
+`;
+
+exports[`TvShow TvShow test img no 1`] = `
+<Link
+  className="tvshow"
+  to="/tvShowDetails/undefined"
+>
+  <br />
+  <img
+    alt=""
+    src="test-file-stub"
+  />
+  <p>
+    <br />
+    <span />
+  </p>
+</Link>
+`;
+
+exports[`TvShow TvShow test rating is 1`] = `
+<Link
+  className="tvshow"
+  to="/tvShowDetails/undefined"
+>
+  <br />
+  <img
+    alt=""
+    src="test-file-stub"
+  />
+  <button
+    className="rating"
+    type="button"
+  >
+    rating
+  </button>
+  <p>
+    <br />
+    <span />
+  </p>
+</Link>
+`;

@@ -1,0 +1,30 @@
+$back-color: #222;
+
+.header {
+  background-color: $back-color;
+  height: 55px;
+}
+
+.header button {
+  outline: none;
+  color: #9d9d9d;
+  border: none;
+  background-color: $back-color;
+  margin-top: 5px;
+  font-size: 35px;
+  margin-left: 20%;
+}
+
+.header button:hover {
+  color: white;
+}
+
+@media only screen and (max-width: 759px) {
+  .header {
+    text-align: center;
+  }
+
+  .header button {
+    margin-left: 0;
+  }
+}

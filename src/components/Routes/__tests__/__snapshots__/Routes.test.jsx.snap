@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes Routes Home 1`] = `"Home"`;
+
+exports[`Routes Routes TvShowDetails 1`] = `"TvShowDetails"`;
+
+exports[`Routes Routes TvShowPage 1`] = `"TvShowPage"`;

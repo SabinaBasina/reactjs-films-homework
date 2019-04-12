@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`moduleDetails should handle IS_READY_EPISODES 1`] = `
+Object {
+  "isReadyEpisodes": undefined,
+}
+`;
+
+exports[`moduleDetails should handle IS_READY_TVSHOW 1`] = `
+Object {
+  "isReadyTvShow": undefined,
+}
+`;
+
+exports[`moduleDetails should handle SET_TVSHOWDETAILS 1`] = `
+Object {
+  "tvShow": undefined,
+}
+`;
+
+exports[`moduleDetails should handle SET_TVSHOWEPISODES 1`] = `
+Object {
+  "tvShowEpisodes": undefined,
+}
+`;
+
+exports[`moduleDetails should return the initial state 1`] = `
+Object {
+  "isReadyEpisodes": false,
+  "isReadyTvShow": false,
+}
+`;

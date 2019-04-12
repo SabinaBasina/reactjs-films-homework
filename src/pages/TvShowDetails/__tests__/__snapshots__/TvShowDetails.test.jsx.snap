@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShowDetails Episode test country name is 1`] = `
+<div>
+  <_default
+    loading={false}
+  />
+  <div
+    className="tvshow"
+  >
+    <h1 />
+    <div
+      className="information"
+    >
+      <img
+        alt=""
+        className="image"
+        src="test-file-stub"
+      />
+      <div>
+        <p
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": undefined,
+            }
+          }
+        />
+        <br />
+        <b>
+          Genres: 
+        </b>
+        <br />
+        <b>
+          Country: 
+        </b>
+        name
+        <br />
+        <b>
+          Premiered: 
+        </b>
+        <time />
+      </div>
+    </div>
+    <p
+      className="episodes"
+    >
+      Episodes
+    </p>
+    <Connect(Episodes) />
+  </div>
+</div>
+`;
+
+exports[`TvShowDetails Episode test genres is 1`] = `
+<div>
+  <_default
+    loading={false}
+  />
+  <div
+    className="tvshow"
+  >
+    <h1 />
+    <div
+      className="information"
+    >
+      <img
+        alt=""
+        className="image"
+        src="test-file-stub"
+      />
+      <div>
+        <p
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": undefined,
+            }
+          }
+        />
+        <br />
+        <b>
+          Genres: 
+        </b>
+        g, e, n, r, e, s
+        <br />
+        <b>
+          Country: 
+        </b>
+        <br />
+        <b>
+          Premiered: 
+        </b>
+        <time />
+      </div>
+    </div>
+    <p
+      className="episodes"
+    >
+      Episodes
+    </p>
+    <Connect(Episodes) />
+  </div>
+</div>
+`;
+
+exports[`TvShowDetails Episode test img is 1`] = `
+<div>
+  <_default
+    loading={false}
+  />
+  <div
+    className="tvshow"
+  >
+    <h1 />
+    <div
+      className="information"
+    >
+      <img
+        alt=""
+        className="image"
+        src="medium"
+      />
+      <div>
+        <p
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": undefined,
+            }
+          }
+        />
+        <br />
+        <b>
+          Genres: 
+        </b>
+        <br />
+        <b>
+          Country: 
+        </b>
+        <br />
+        <b>
+          Premiered: 
+        </b>
+        <time />
+      </div>
+    </div>
+    <p
+      className="episodes"
+    >
+      Episodes
+    </p>
+    <Connect(Episodes) />
+  </div>
+</div>
+`;
+
+exports[`TvShowDetails Episode test tvShow no 1`] = `
+<div>
+  <_default
+    loading={false}
+  />
+  <div
+    className="tvshow"
+  >
+    <h1 />
+    <div
+      className="information"
+    >
+      <img
+        alt=""
+        className="image"
+        src="test-file-stub"
+      />
+      <div>
+        <p
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": undefined,
+            }
+          }
+        />
+        <br />
+        <b>
+          Genres: 
+        </b>
+        <br />
+        <b>
+          Country: 
+        </b>
+        <br />
+        <b>
+          Premiered: 
+        </b>
+        <time />
+      </div>
+    </div>
+    <p
+      className="episodes"
+    >
+      Episodes
+    </p>
+    <Connect(Episodes) />
+  </div>
+</div>
+`;
+
+exports[`TvShowDetails TvShowDetails snapshot 1`] = `
+<div>
+  <_default
+    loading={true}
+  />
+</div>
+`;
+
+exports[`TvShowDetails TvShowDetails test id is 1`] = `
+<div>
+  <img
+    alt="Loading"
+    className="loader"
+    src="test-file-stub"
+  />
+</div>
+`;

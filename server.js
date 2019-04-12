@@ -4,8 +4,10 @@
 
 const express = require('express');
 const webpack = require('webpack');
+const history = require('connect-history-api-fallback');
 
 const app = express();
+app.use(history());
 
 if (process.env.NODE_ENV === 'development') {
   const config = require('./webpack/webpack.dev.js');

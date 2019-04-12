@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShowPage TvShowPage test page is 1`] = `null`;
+
+exports[`TvShowPage TvShowPage test searchValue is 1`] = `null`;
+
+exports[`TvShowPage TvShowPage test tvShows is 1`] = `
+<main
+  className="tvshows"
+>
+  <React.Fragment>
+    <withRouter(Search) />
+    <div
+      className="library"
+    >
+      <TvShow
+        data={
+          Object {
+            "id": 1,
+          }
+        }
+      />
+      <TvShow
+        data={
+          Object {
+            "id": 2,
+          }
+        }
+      />
+    </div>
+  </React.Fragment>
+</main>
+`;

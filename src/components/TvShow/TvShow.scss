@@ -1,0 +1,28 @@
+.tvshow {
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.tvshow p {
+  color: black;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.tvshow p span {
+  color: rgb(124, 124, 124);
+  font-size: 14px;
+}
+
+.tvshow .rating {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(235, 145, 55);
+  font-size: 16px;
+  border-radius: 25px;
+  border: none;
+  margin-top: 226px;
+  margin-left: -22px;
+}

@@ -1,9 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import Signature from '../Signature';
+import store from '../../modules/store';
+import Menu from '../Menu';
+import Routes from '../Routes';
 
 const App = () => (
-  <Signature name="Sabina Basina" />
+  <Provider store={store}>
+    <Router>
+      <Menu />
+      <Routes />
+    </Router>
+  </Provider>
 );
 
 export default App;

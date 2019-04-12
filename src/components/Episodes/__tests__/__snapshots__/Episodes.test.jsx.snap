@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Episodes Episodes is 1`] = `
+<React.Fragment>
+  <Episode
+    data={
+      Object {
+        "id": 1,
+      }
+    }
+  />
+  <Episode
+    data={
+      Object {
+        "id": 2,
+      }
+    }
+  />
+</React.Fragment>
+`;
+
+exports[`Episodes Episodes snapshot 1`] = `
+<img
+  alt="Loading"
+  className="loader"
+  src="test-file-stub"
+/>
+`;

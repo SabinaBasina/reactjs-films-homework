@@ -1,0 +1,68 @@
+.tvshow {
+  text-align: justify;
+}
+
+.tvshow h1 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.information {
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.information::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.image {
+  float: left;
+  margin: 0 35px 15px 0;
+}
+
+.episodes {
+  margin: 80px 15% 60px 15%;
+  height: 35px;
+  background-color: #222;
+  border-radius: 8px;
+  color: white;
+  font-weight: 100;
+  font-size: 24px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1100px) {
+  .information {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .episodes {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .episodes {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .image {
+    display: block;
+    margin: 0 auto 40px auto;
+    float: none;
+  }
+
+  .information {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}

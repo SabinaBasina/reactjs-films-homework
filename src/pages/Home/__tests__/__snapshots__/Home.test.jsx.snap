@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Home snapshot 1`] = `
+<main>
+  <Connect(TvShowPage)
+    page={0}
+  />
+  <_default
+    loading={true}
+  />
+</main>
+`;
+
+exports[`Home Home test pageNumber is 1`] = `
+<main>
+  <Connect(TvShowPage)
+    page={1}
+  />
+  <_default
+    loading={false}
+  />
+  <div
+    className="pager"
+  >
+    <Link
+      to="/page/0"
+    >
+      <button
+        type="button"
+      >
+        ← Previous Page
+      </button>
+    </Link>
+    <Link
+      to="/page/2"
+    >
+      <button
+        type="button"
+      >
+        Next Page →
+      </button>
+    </Link>
+  </div>
+</main>
+`;
