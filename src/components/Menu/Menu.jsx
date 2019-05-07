@@ -1,18 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { withAuth } from '@okta/okta-react';
+
 import styles from './Menu.scss';
+import { checkAuthentication } from '../../auth/helpers';
 
-const Menu = () => (
-  <header className={styles.header}>
+class Menu extends Component {
+  state = { isAuthenticated: null }
 
-    <Link to="/">
-      <button type="button">
-        TvShows
-      </button>
-    </Link>
+  async componentDidMount() {
+    checkAuthentication();
+  }
 
-  </header>
+  async componentDidUpdate() {
+    checkAuthentication();
+  }
 
-);
+  render() {
+    const { isAuthenticated } = this.state;
+    return (
+      <header className={styles.header}>
 
-export default Menu;
+        <Link to="/">
+          <button type="button" className={styles.tvShows}>
+            TvShows
+          </button>
+        </Link>
+
+        {!isAuthenticated && (
+          <Link to="/login">
+            <button type="button" className={styles.login}>
+              Login
+            </button>
+          </Link>
+        )}
+
+        {isAuthenticated && (
+          <Link to="/">
+            <button type="button" className={styles.login}>
+              Logout
+            </button>
+          </Link>
+        )}
+
+      </header>
+    );
+  }
+}
+
+export default withAuth(Menu);

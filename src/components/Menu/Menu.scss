@@ -3,28 +3,30 @@ $back-color: #222;
 .header {
   background-color: $back-color;
   height: 55px;
+  width: 100%;
+  text-align: center;
 }
 
-.header button {
+.tvShows,
+ .login {
   outline: none;
+  cursor: pointer;
   color: #9d9d9d;
   border: none;
   background-color: $back-color;
-  margin-top: 5px;
+  margin-top: 2px;
+}
+
+.login {
+  font-size: 18px;
+  margin-left: 25%;
+}
+
+.tvShows {
   font-size: 35px;
-  margin-left: 20%;
+  margin-right: 25%;
 }
 
 .header button:hover {
   color: white;
-}
-
-@media only screen and (max-width: 759px) {
-  .header {
-    text-align: center;
-  }
-
-  .header button {
-    margin-left: 0;
-  }
 }
