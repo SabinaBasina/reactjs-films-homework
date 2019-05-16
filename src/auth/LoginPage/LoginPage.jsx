@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as OktaSignIn from '@okta/okta-signin-widget';
 
-import { authConfig } from './helpers';
+import { authConfig } from '../helpers';
 
 class LoginPage extends Component {
     state = { user: null };

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { ImplicitCallback } from '@okta/okta-react';
+// import { ImplicitCallback } from '@okta/okta-react';
 
 import './Routes.scss';
 import Home from '../../pages/Home';
@@ -14,7 +14,7 @@ const Routes = () => (
   <Fragment>
     <Route path="/" exact component={Home} />
     <Route path="/login" component={LoginPage} />
-    <Route path="/implicit/callback" component={ImplicitCallback} />
+    {/* <Route path="/implicit/callback" component={ImplicitCallback} /> */}
     <Route
       path="/page/:pageNumber"
       render={props => <Home pageNumber={Number(props.match.params.pageNumber)} />}

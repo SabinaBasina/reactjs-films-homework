@@ -3,21 +3,32 @@ import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
 
 import styles from './Menu.scss';
-import { checkAuthentication } from '../../auth/helpers';
+import { checkAuthentication, login, logout } from '../../auth/helpers';
 
 class Menu extends Component {
-  state = { isAuthenticated: null }
+  constructor(props) {
+    super(props);
+
+    this.state = { isAuthenticated: null };
+
+    this.checkAuthentication = checkAuthentication.bind(this);
+    this.login = login.bind(this);
+    this.logout = logout.bind(this);
+  }
 
   async componentDidMount() {
-    checkAuthentication();
+    this.checkAuthentication();
   }
 
   async componentDidUpdate() {
-    checkAuthentication();
+    this.checkAuthentication();
+    console.log('rege');
   }
 
   render() {
     const { isAuthenticated } = this.state;
+    console.log('isAuthenticated', isAuthenticated);
+    console.log(this.props.auth);
     return (
       <header className={styles.header}>
 
@@ -29,7 +40,7 @@ class Menu extends Component {
 
         {!isAuthenticated && (
           <Link to="/login">
-            <button type="button" className={styles.login}>
+            <button type="button" className={styles.login} onClick={this.login}>
               Login
             </button>
           </Link>
@@ -37,7 +48,7 @@ class Menu extends Component {
 
         {isAuthenticated && (
           <Link to="/">
-            <button type="button" className={styles.login}>
+            <button type="button" className={styles.login} onClick={this.logout}>
               Logout
             </button>
           </Link>
