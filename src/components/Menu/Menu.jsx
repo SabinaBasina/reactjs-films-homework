@@ -6,57 +6,62 @@ import styles from './Menu.scss';
 import { checkAuthentication, login, logout } from '../../auth/helpers';
 
 class Menu extends Component {
-  constructor(props) {
-    super(props);
+    state = { authenticated: null };
 
-    this.state = { isAuthenticated: null };
+    checkAuthentication = checkAuthentication.bind(this);
 
-    this.checkAuthentication = checkAuthentication.bind(this);
-    this.login = login.bind(this);
-    this.logout = logout.bind(this);
-  }
+    login = login.bind(this);
 
-  async componentDidMount() {
-    this.checkAuthentication();
-  }
+    logout = logout.bind(this);
 
-  async componentDidUpdate() {
-    this.checkAuthentication();
-    console.log('rege');
-  }
+    async componentDidMount() {
+      this.checkAuthentication();
+    }
 
-  render() {
-    const { isAuthenticated } = this.state;
-    console.log('isAuthenticated', isAuthenticated);
-    console.log(this.props.auth);
-    return (
-      <header className={styles.header}>
+    async componentDidUpdate() {
+      this.checkAuthentication();
+    }
 
-        <Link to="/">
-          <button type="button" className={styles.tvShows}>
-            TvShows
-          </button>
-        </Link>
+    render() {
+      const { authenticated, user } = this.state;
+      return (
+        <header className={styles.header}>
 
-        {!isAuthenticated && (
-          <Link to="/login">
-            <button type="button" className={styles.login} onClick={this.login}>
-              Login
+          <Link to="/" className={styles.tvShowsLink}>
+            <button type="button" className={styles.tvShows}>
+              TvShows
             </button>
           </Link>
-        )}
 
-        {isAuthenticated && (
-          <Link to="/">
-            <button type="button" className={styles.login} onClick={this.logout}>
-              Logout
-            </button>
-          </Link>
-        )}
+          <div className={styles.auth}>
+            {!authenticated && (
+              <Link to="/login">
+                <button type="button" className={styles.log} onClick={this.login}>
+                  Login
+                </button>
+              </Link>
+            )}
 
-      </header>
-    );
-  }
+            {authenticated && (
+              <Link to="/profile">
+                <button type="button" className={styles.profile}>
+                  {user && user.name}
+                </button>
+              </Link>
+            )}
+
+            {authenticated && (
+              <Link to="/login">
+                <button type="button" className={styles.log} onClick={this.logout}>
+                  Logout
+                </button>
+              </Link>
+            )}
+          </div>
+
+        </header>
+      );
+    }
 }
 
 export default withAuth(Menu);

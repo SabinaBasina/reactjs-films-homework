@@ -1,20 +1,32 @@
 /* eslint-disable react/no-danger */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withAuth } from '@okta/okta-react';
 
 import styles from './TvShowDetails.scss';
 import NoImage from '../../images/NoImage.jpg';
 import Episodes from '../../components/Episodes';
 import Loader from '../../components/Loader';
+import { checkAuthentication } from '../../auth/helpers';
 
 class TvShowDetails extends Component {
-  componentDidMount() {
+  state = { authenticated: null };
+
+  checkAuthentication = checkAuthentication.bind(this);
+
+  async componentDidMount() {
     const { id, loadTvShowsDetails } = this.props;
     loadTvShowsDetails(id);
+    this.checkAuthentication();
+  }
+
+  async componentDidUpdate() {
+    this.checkAuthentication();
   }
 
   render() {
     const { tvShow, isReadyTvShow } = this.props;
+    const { authenticated } = this.state;
     return (
       <div>
 
@@ -27,12 +39,18 @@ class TvShowDetails extends Component {
               <h1>{tvShow.name}</h1>
 
               <div className={styles.information}>
+                <div className={styles.image}>
+                  <img
+                    src={tvShow.image ? tvShow.image.medium : NoImage}
+                    alt=""
+                  />
 
-                <img
-                  src={tvShow.image ? tvShow.image.medium : NoImage}
-                  className={styles.image}
-                  alt=""
-                />
+                  {authenticated && (
+                    <button type="button" className={styles.addTvShow}>
+                      Add
+                    </button>
+                  )}
+                </div>
 
                 <div>
                   <p dangerouslySetInnerHTML={{ __html: tvShow.summary }} />
@@ -62,7 +80,7 @@ class TvShowDetails extends Component {
   }
 }
 
-export default TvShowDetails;
+export default withAuth(TvShowDetails);
 
 TvShowDetails.propTypes = {
   id: PropTypes.string,
