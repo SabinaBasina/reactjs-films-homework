@@ -1,17 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Menu snapsphot 1`] = `
-<header
-  className="header"
->
-  <Link
-    to="/"
-  >
-    <button
-      type="button"
-    >
-      TvShows
-    </button>
-  </Link>
-</header>
+<Secure
+  render={[Function]}
+/>
 `;

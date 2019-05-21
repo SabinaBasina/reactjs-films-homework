@@ -29,7 +29,8 @@
   align-items: center;
 }
 
-.addTvShow {
+.addTvShow,
+.loadingTvShow {
   cursor: pointer;
   outline: none;
   width: 130px;

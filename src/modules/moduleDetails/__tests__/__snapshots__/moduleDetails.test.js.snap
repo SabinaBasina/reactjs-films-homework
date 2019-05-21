@@ -6,11 +6,7 @@ Object {
 }
 `;
 
-exports[`moduleDetails should handle IS_READY_TVSHOW 1`] = `
-Object {
-  "isReadyTvShow": undefined,
-}
-`;
+exports[`moduleDetails should handle IS_READY_TVSHOW 1`] = `Array []`;
 
 exports[`moduleDetails should handle SET_TVSHOWDETAILS 1`] = `
 Object {
@@ -27,6 +23,5 @@ Object {
 exports[`moduleDetails should return the initial state 1`] = `
 Object {
   "isReadyEpisodes": false,
-  "isReadyTvShow": false,
 }
 `;

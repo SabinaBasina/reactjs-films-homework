@@ -8,32 +8,71 @@ import NoImage from '../../images/NoImage.jpg';
 import Episodes from '../../components/Episodes';
 import Loader from '../../components/Loader';
 import { checkAuthentication } from '../../auth/helpers';
+import { addFavorite, deleteFavorite, getFavorites } from '../../auth/db/helpers';
 
 class TvShowDetails extends Component {
-  state = { authenticated: null };
+  state = {
+    authenticated: null,
+    isFavorite: false,
+    isFavoriteReady: false,
+    isReadyTvShow: false,
+  };
 
   checkAuthentication = checkAuthentication.bind(this);
 
+  addFavorite = this.addFavorite.bind(this);
+
+  deleteFavorite = this.deleteFavorite.bind(this);
+
   async componentDidMount() {
+    await this.checkAuthentication();
     const { id, loadTvShowsDetails } = this.props;
-    loadTvShowsDetails(id);
-    this.checkAuthentication();
+    const { authenticated, user } = this.state;
+    const favorites = authenticated ? await getFavorites(user.email) : [];
+    await loadTvShowsDetails(id);
+    this.setState({
+      isFavorite: favorites.includes(`${id}`),
+      isFavoriteReady: true,
+      isReadyTvShow: true,
+    });
   }
 
   async componentDidUpdate() {
     this.checkAuthentication();
   }
 
+  async addFavorite() {
+    const { user } = this.state;
+    const { tvShow } = this.props;
+    this.setState({ isFavoriteReady: false });
+    await addFavorite(user.email, tvShow.id);
+    this.setState({ isFavorite: true, isFavoriteReady: true });
+  }
+
+  async deleteFavorite() {
+    const { user } = this.state;
+    const { tvShow } = this.props;
+    this.setState({ isFavoriteReady: false });
+    await deleteFavorite(user.email, tvShow.id);
+    this.setState({ isFavorite: false, isFavoriteReady: true });
+  }
+
   render() {
-    const { tvShow, isReadyTvShow } = this.props;
-    const { authenticated } = this.state;
+    const { tvShow } = this.props;
+    const {
+      authenticated,
+      isFavorite,
+      isFavoriteReady,
+      isReadyTvShow,
+    } = this.state;
+
     return (
       <div>
 
         <Loader loading={!isReadyTvShow} />
 
         {isReadyTvShow
-            && (
+          && (
             <div className={styles.tvshow}>
 
               <h1>{tvShow.name}</h1>
@@ -46,10 +85,38 @@ class TvShowDetails extends Component {
                   />
 
                   {authenticated && (
-                    <button type="button" className={styles.addTvShow}>
-                      Add
-                    </button>
+                    <div>
+                      {!isFavoriteReady
+                        && (
+                          <button
+                            disabled
+                            type="button"
+                            className={styles.loadingTvShow}
+                          >
+                            Loading...
+                          </button>
+                        )}
+                      {isFavoriteReady && !isFavorite && (
+                        <button
+                          type="button"
+                          className={styles.addTvShow}
+                          onClick={this.addFavorite}
+                        >
+                          Add
+                        </button>
+                      )}
+                      {isFavoriteReady && isFavorite && (
+                        <button
+                          type="button"
+                          className={styles.addTvShow}
+                          onClick={this.deleteFavorite}
+                        >
+                          Delete
+                        </button>
+                      )}
+                    </div>
                   )}
+
                 </div>
 
                 <div>
@@ -72,7 +139,7 @@ class TvShowDetails extends Component {
               <Episodes nameTvShow={tvShow.name} />
 
             </div>
-            )
+          )
         }
 
       </div>
@@ -85,13 +152,11 @@ export default withAuth(TvShowDetails);
 TvShowDetails.propTypes = {
   id: PropTypes.string,
   loadTvShowsDetails: PropTypes.func,
-  isReadyTvShow: PropTypes.bool,
   tvShow: PropTypes.instanceOf(Object),
 };
 
 TvShowDetails.defaultProps = {
   loadTvShowsDetails: () => { },
   id: 'undefined',
-  isReadyTvShow: false,
   tvShow: undefined,
 };

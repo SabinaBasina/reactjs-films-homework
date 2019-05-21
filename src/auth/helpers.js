@@ -1,7 +1,7 @@
 const authConfig = {
   clientId: '0oam1rxwzJuvi4oI9356',
   issuer: 'https://dev-936073.okta.com/oauth2/default',
-  redirectUri: 'http://localhost:3000/implicit/callback',
+  redirectUri: 'https://my-react-app-git-part3.sabina98bel.now.sh/implicit/callback',
   scope: 'openid profile email',
 };
 

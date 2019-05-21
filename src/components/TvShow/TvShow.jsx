@@ -12,11 +12,11 @@ class TvShow extends PureComponent {
         <br />
         <img src={data.image ? data.image.medium : NoImage} alt="" />
         {data.rating && data.rating.average
-        && (
-        <button className={styles.rating} type="button">
-          {data.rating.average}
-        </button>
-        )}
+          && (
+            <button className={styles.rating} type="button">
+              {data.rating.average}
+            </button>
+          )}
         <p>
           {data.name}
           <br />
