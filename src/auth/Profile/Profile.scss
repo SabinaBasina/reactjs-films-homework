@@ -1,0 +1,16 @@
+.tvshows {
+  text-align: center;
+}
+
+.favorites {
+  margin: 35px 0 15px 0;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.library {
+  margin-left: 15%;
+  margin-right: 15%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
