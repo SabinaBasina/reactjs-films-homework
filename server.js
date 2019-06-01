@@ -7,6 +7,7 @@ const webpack = require('webpack');
 const history = require('connect-history-api-fallback');
 
 const app = express();
+const port = 3000;
 app.use(history());
 
 if (process.env.NODE_ENV === 'development') {
@@ -33,6 +34,6 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/', express.static('./dist'));
 
 // Serve the files on port 3000.
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!\n');
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!\n`);
 });
