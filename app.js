@@ -51,8 +51,6 @@ app.use(passport.initialize());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// app.get('/', (req, res) => res.json({ message: 'Hello World!' }));
-
 app.post('/login', (req, res) => {
   var name; var password;
   if (req.body.name && req.body.password) {
@@ -63,7 +61,7 @@ app.post('/login', (req, res) => {
   if (!user) {
     res.status(401).json({ message: 'no such user found' });
   }
-
+  console.log(name, password);
   if (user.password === req.body.password) {
     var payload = { id: user.id };
     var token = jwt.sign(payload, jwtOptions.secretOrKey);
@@ -71,6 +69,7 @@ app.post('/login', (req, res) => {
   } else {
     res.status(401).json({ message: 'password did not match' });
   }
+
 });
 
 app.get('/secret', passport.authenticate('jwt', { session: false }), (req, res) => {
