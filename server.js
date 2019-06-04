@@ -88,7 +88,6 @@ app.post('/login', (req, res) => {
     name = req.body.name;
     password = req.body.password;
   }
-  console.log(name, password);
   const user = users[_.findIndex(users, { name })];
   if (!user) {
     res.status(401).json({ message: 'no such user found' });
@@ -102,6 +101,11 @@ app.post('/login', (req, res) => {
     res.status(401).json({ message: 'password did not match' });
   }
 });
+
+// app.get('/logout', (req, res) => {
+//   req.logout();
+//   res.redirect('/');
+// });
 
 app.get('/secret', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.json('Success! You can not see this without a token');

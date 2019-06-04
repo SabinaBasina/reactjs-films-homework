@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import http from 'axios';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './Login.scss';
 
 class Login extends Component {
   state = {
-    email: '',
+    name: '',
     password: '',
   }
 
-  handleChangeEmail = (e) => {
-    this.setState({ email: e.target.value });
+  handleChangeName = (e) => {
+    this.setState({ name: e.target.value });
   }
 
   handleChangePassword = (e) => {
@@ -18,26 +19,27 @@ class Login extends Component {
   }
 
   signIn = async () => {
-    const { email, password } = this.state;
-    const response = await http.post('http://localhost:3000/login', {
-      email,
-      password,
-    });
-    console.log(response.data);
+    const { loadIsAuthentication } = this.props;
+    const { name, password } = this.state;
+    await loadIsAuthentication(name, password);
+    const { history, isAuthentication } = this.props;
+    if (isAuthentication) {
+      history.push('/');
+      sessionStorage.setItem('name', name);
+    }
   }
 
   render() {
-    const { email, password } = this.state;
-    console.log(email, password);
+    const { name, password } = this.state;
     return (
       <form className={styles.form}>
         <p className={styles.form_header}>Sign In</p>
         <input
           type="text"
-          className={styles.form_email}
+          className={styles.form_name}
           placeholder="Name"
-          value={email}
-          onChange={this.handleChangeEmail}
+          value={name}
+          onChange={this.handleChangeName}
         />
         <input
           type="password"
@@ -47,7 +49,7 @@ class Login extends Component {
           onChange={this.handleChangePassword}
         />
         <input
-          type="submit"
+          type="button"
           className={styles.form_button}
           value="Sign in"
           onClick={this.signIn}
@@ -57,4 +59,16 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
+
+Login.propTypes = {
+  history: PropTypes.instanceOf(Object),
+  loadIsAuthentication: PropTypes.func,
+  isAuthentication: PropTypes.instanceOf(Object),
+};
+
+Login.defaultProps = {
+  history: undefined,
+  loadIsAuthentication: () => { },
+  isAuthentication: null,
+};

@@ -1,26 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+
 import styles from './Menu.scss';
 
-const Menu = () => (
-  <header className={styles.header}>
+class Menu extends Component {
+  signOut = () => {
+    sessionStorage.clear();
+  }
 
-    <Link to="/" className={styles.tvShowsLink}>
-      <button type="button" className={styles.tvShows}>
-        TvShows
-      </button>
-    </Link>
+  render() {
+    return (
+      <header className={styles.header}>
 
-    <div className={styles.auth}>
-      <Link to="/login">
-        <button type="button" className={styles.log}>
-          Login
-        </button>
-      </Link>
-    </div>
+        <Link to="/" className={styles.tvShowsLink}>
+          <button type="button" className={styles.tvShows}>
+            TvShows
+          </button>
+        </Link>
 
-  </header>
+        <div className={styles.auth}>
+          {!sessionStorage.name && (
+            <Link to="/login">
+              <button type="button" className={styles.log}>
+                Login
+              </button>
+            </Link>
+          )}
 
-);
+          {sessionStorage.name && (
+            <Link to="/login">
+              <button type="button" className={styles.log} onClick={this.signOut}>
+                Logout
+              </button>
+            </Link>
+          )}
+
+        </div>
+
+      </header>
+    );
+  }
+}
 
 export default Menu;
