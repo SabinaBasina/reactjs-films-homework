@@ -20,6 +20,10 @@
       "dest": "/index.html"
     },
     {
+      "src": "/profile",
+      "dest": "/index.html"
+    },
+    {
       "src": "/page/(.*)",
       "dest": "/index.html"
     },

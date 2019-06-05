@@ -29,6 +29,7 @@ class Login extends Component {
       .then((response) => {
         loadIsAuthentication(true);
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('id', response.data.payload.id);
         history.push('/');
       })
       .catch(error => console.log(error));
