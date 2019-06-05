@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './Menu.scss';
 
 class Menu extends Component {
-  signOut = () => {
-    sessionStorage.clear();
+  componentDidMount = async () => {
+    const { loadIsAuthentication } = this.props;
+    if (localStorage.token) await loadIsAuthentication(true);
+  }
+
+  signOut = async () => {
+    const { loadIsAuthentication } = this.props;
+    await loadIsAuthentication(false);
+    localStorage.clear();
   }
 
   render() {
+    const { isAuthentication } = this.props;
     return (
       <header className={styles.header}>
 
@@ -19,7 +28,7 @@ class Menu extends Component {
         </Link>
 
         <div className={styles.auth}>
-          {!sessionStorage.name && (
+          {!isAuthentication && (
             <Link to="/login">
               <button type="button" className={styles.log}>
                 Login
@@ -27,7 +36,15 @@ class Menu extends Component {
             </Link>
           )}
 
-          {sessionStorage.name && (
+          {isAuthentication && (
+            <Link to="/profile">
+              <button type="button" className={styles.profile}>
+                Profile
+              </button>
+            </Link>
+          )}
+
+          {isAuthentication && (
             <Link to="/login">
               <button type="button" className={styles.log} onClick={this.signOut}>
                 Logout
@@ -43,3 +60,13 @@ class Menu extends Component {
 }
 
 export default Menu;
+
+Menu.propTypes = {
+  loadIsAuthentication: PropTypes.func,
+  isAuthentication: PropTypes.bool,
+};
+
+Menu.defaultProps = {
+  loadIsAuthentication: () => { },
+  isAuthentication: false,
+};

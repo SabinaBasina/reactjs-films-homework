@@ -69,7 +69,6 @@ app.post('/login', (req, res) => {
   } else {
     res.status(401).json({ message: 'password did not match' });
   }
-
 });
 
 app.get('/secret', passport.authenticate('jwt', { session: false }), (req, res) => {

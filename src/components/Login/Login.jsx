@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import http from 'axios';
 
 import styles from './Login.scss';
 
@@ -19,14 +20,18 @@ class Login extends Component {
   }
 
   signIn = async () => {
-    const { loadIsAuthentication } = this.props;
+    const { loadIsAuthentication, history } = this.props;
     const { name, password } = this.state;
-    await loadIsAuthentication(name, password);
-    const { history, isAuthentication } = this.props;
-    if (isAuthentication) {
-      history.push('/');
-      sessionStorage.setItem('name', name);
-    }
+    await http.post('/login', {
+      name,
+      password,
+    })
+      .then((response) => {
+        loadIsAuthentication(true);
+        localStorage.setItem('token', response.data.token);
+        history.push('/');
+      })
+      .catch(error => console.log(error));
   }
 
   render() {
@@ -64,11 +69,9 @@ export default withRouter(Login);
 Login.propTypes = {
   history: PropTypes.instanceOf(Object),
   loadIsAuthentication: PropTypes.func,
-  isAuthentication: PropTypes.instanceOf(Object),
 };
 
 Login.defaultProps = {
   history: undefined,
   loadIsAuthentication: () => { },
-  isAuthentication: null,
 };

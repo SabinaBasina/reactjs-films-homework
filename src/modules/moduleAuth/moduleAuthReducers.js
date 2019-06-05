@@ -1,5 +1,5 @@
 const initialState = {
-  isAuthentication: null,
+  isAuthentication: false,
 };
 
 export default (state = initialState, action) => {
@@ -9,11 +9,6 @@ export default (state = initialState, action) => {
         ...state,
         isAuthentication: action.payload,
       };
-    // case 'SET_TVSHOWDETAILS':
-    //   return {
-    //     ...state,
-    //     tvShow: action.payload,
-    //   };
     default:
       return state;
   }
