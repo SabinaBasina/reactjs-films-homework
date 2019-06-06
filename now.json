@@ -2,12 +2,38 @@
   "version": 2,
   "name": "my-react-app",
   "builds": [
-      { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "dist" } }
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
   ],
   "routes": [
-    {"src": "/search/(.*)", "dest": "/index.html"},
-    {"src": "/page/(.*)", "dest": "/index.html"},
-    {"src": "/tvShowDetails/(.*)", "dest": "/index.html"},
-    {"src": "/", "dest": "/index.html"}
+    {
+      "src": "/search/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/login",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/profile",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/page/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/tvShowDetails/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
   ]
 }

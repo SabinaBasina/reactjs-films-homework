@@ -1,0 +1,54 @@
+$back-color: #222;
+
+.form {
+  width: 400px;
+  height: 300px;
+  margin: 150px auto;
+  background-color: rgb(255, 255, 255);
+  border: 1.4px solid $back-color;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_header {
+  color: $back-color;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  font-size: 20px;
+}
+
+.form_name,
+.form_password,
+.form_button {
+  width: 65%;
+  outline: none;
+  margin: 12px;
+}
+
+.form_name,
+.form_password {
+  height: 35px;
+  font-size: 14px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid $back-color;
+  text-indent: 14px;
+}
+
+.form_button {
+  color: #9d9d9d;
+  height: 45px;
+  background-color: $back-color;
+  border: 1px solid $back-color;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form_button:hover {
+  color: white;
+}

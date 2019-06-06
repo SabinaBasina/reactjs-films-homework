@@ -1,0 +1,33 @@
+.tvshows {
+  text-align: center;
+}
+
+.favorites {
+  margin: 35px 0 15px 0;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.log {
+  outline: none;
+  border-radius: 25px;
+  width: 140px;
+  height: 45px;
+  text-align: center;
+  color: #9d9d9d;
+  background-color: #222;
+  border: none;
+  font-size: 17px;
+  margin-top: 130px;
+}
+
+.log:hover {
+  color: white;
+}
+
+.library {
+  margin-left: 15%;
+  margin-right: 15%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}

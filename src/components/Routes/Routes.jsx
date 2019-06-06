@@ -6,10 +6,14 @@ import './Routes.scss';
 import Home from '../../pages/Home';
 import TvShowDetails from '../../pages/TvShowDetails';
 import TvShowPage from '../TvShowPage';
+import Login from '../Login';
+import Profile from '../Profile';
 
 const Routes = () => (
   <Fragment>
     <Route path="/" exact component={Home} />
+    <Route path="/login" exact component={Login} />
+    <Route path="/profile" component={Profile} />
     <Route
       path="/page/:pageNumber"
       render={props => <Home pageNumber={Number(props.match.params.pageNumber)} />}
