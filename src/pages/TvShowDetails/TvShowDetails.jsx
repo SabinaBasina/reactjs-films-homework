@@ -6,7 +6,7 @@ import styles from './TvShowDetails.scss';
 import NoImage from '../../images/NoImage.jpg';
 import Episodes from '../../components/Episodes';
 import Loader from '../../components/Loader';
-import { addFavorite, deleteFavorite, getFavorites } from '../../dbFavorite/helpers';
+import { addFavorite, deleteFavorite, getFavorites } from '../../dbFavorite/favoritesService';
 
 class TvShowDetails extends Component {
   state = {

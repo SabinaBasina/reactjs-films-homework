@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { getFavorites } from '../../dbFavorite/helpers';
+import { getFavorites } from '../../dbFavorite/favoritesService';
 import TvShow from '../TvShow';
 import styles from './Profile.scss';
 import Loader from '../Loader';
